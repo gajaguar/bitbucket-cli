@@ -122,17 +122,24 @@ anything stored.
 
 ### Commands
 
-| Command                          | Does                                               |
-| -------------------------------- | -------------------------------------------------- |
-| `bitbucket user me`              | Show the user the credential belongs to            |
-| `bitbucket workspace list`       | List the workspaces the credential can access      |
-| `bitbucket workspace get [SLUG]` | Show a workspace; defaults to the selected one     |
-| `bitbucket workspace use SLUG`   | Save the workspace in the active profile           |
-| `bitbucket repo list`            | List repositories (`--query`, `--sort`, `--limit`) |
-| `bitbucket repo get SLUG`        | Show one repository                                |
-| `bitbucket config path`          | Print the settings file location                   |
-| `bitbucket config list`          | List profiles                                      |
-| `bitbucket config use NAME`      | Set the default profile                            |
+| Command                          | Does                                                                        |
+| -------------------------------- | --------------------------------------------------------------------------- |
+| `bitbucket user me`              | Show the user the credential belongs to                                     |
+| `bitbucket workspace list`       | List the workspaces the credential can access                               |
+| `bitbucket workspace get [SLUG]` | Show a workspace; defaults to the selected one                              |
+| `bitbucket workspace use SLUG`   | Save the workspace in the active profile                                    |
+| `bitbucket repo list`            | List repositories (`--query`, `--sort`, `--limit`)                          |
+| `bitbucket repo get SLUG`        | Show one repository                                                         |
+| `bitbucket repo create SLUG`     | Create a repository (`repo update`, `delete`, `fork`, `forks`, `watchers`)  |
+| `bitbucket project list`         | Projects (`get`, `create`, `update`, `delete`)                              |
+| `bitbucket member list`          | Workspace members (`get`)                                                   |
+| `bitbucket permission list`      | Workspace and repository permissions (`mine`)                               |
+| `bitbucket webhook list`         | Webhooks of a repository or workspace (`get`, `create`, `update`, `delete`) |
+| `bitbucket hook-event list TYPE` | Events a webhook can subscribe to (`types`)                                 |
+| `bitbucket workspace gpg-key`    | Print the workspace GPG public key                                          |
+| `bitbucket config path`          | Print the settings file location                                            |
+| `bitbucket config list`          | List profiles                                                               |
+| `bitbucket config use NAME`      | Set the default profile                                                     |
 
 Bitbucket pages results by cursor, so list commands take `--limit N` to stop
 early, or `--cursor URL` to fetch one page; the cursor of the next page is
@@ -198,7 +205,7 @@ set; run them with `uv run pytest -m live`.
 
 - [x] `0.1.0` Foundation: authentication, configuration, output, `user me`,
   workspace and repository read commands
-- [ ] `0.2.0` Repositories, projects, members, webhooks
+- [x] `0.2.0` Repositories, projects, members, webhooks
 - [ ] `0.3.0` Pull requests
 - [ ] `0.4.0` Branches, tags, commits, source, statuses, reports, downloads
 - [ ] `0.5.0` Branch restrictions, branching model, reviewers, permissions

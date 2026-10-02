@@ -59,3 +59,52 @@ REPOSITORY: Final = (
     Column("owner.display_name", "Owner"),
     Column("created_on", "Created"),
 )
+
+PROJECTS: Final = (
+    Column("key", "Key"),
+    Column("name", "Name"),
+    Column("is_private", "Private"),
+    Column("description", "Description"),
+    Column("updated_on", "Updated"),
+)
+
+PROJECT: Final = (*PROJECTS, Column("uuid", "UUID"), Column("created_on", "Created"))
+
+ACCOUNTS: Final = (
+    Column("display_name", "Name"),
+    Column("nickname", "Nickname"),
+    Column("account_id", "Account ID"),
+    Column("uuid", "UUID"),
+)
+
+MEMBERS: Final = (
+    Column("user.display_name", "Name"),
+    Column("user.nickname", "Nickname"),
+    Column("user.account_id", "Account ID"),
+    Column("permission", "Permission"),
+    Column("added_on", "Added"),
+    Column("last_accessed", "Last accessed"),
+)
+
+REPOSITORY_PERMISSIONS: Final = (
+    Column("repository.full_name", "Repository"),
+    Column("user.display_name", "User"),
+    Column("permission", "Permission"),
+)
+
+WEBHOOKS: Final = (
+    Column("uuid", "UUID"),
+    Column("description", "Description"),
+    Column("url", "URL"),
+    Column("active", "Active"),
+    Column("subject_type", "Subject"),
+)
+
+WEBHOOK: Final = (*WEBHOOKS, Column("events", "Events"), Column("created_at", "Created"))
+
+HOOK_EVENTS: Final = (
+    Column("event", "Event"),
+    Column("category", "Category"),
+    Column("label", "Label"),
+    Column("description", "Description"),
+)

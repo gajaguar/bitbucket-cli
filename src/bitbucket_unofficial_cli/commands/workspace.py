@@ -70,3 +70,10 @@ def use(ctx: typer.Context, slug: Annotated[str, typer.Argument(help="Workspace 
     updated = settings.profiles[name].model_copy(update={"workspace": slug})
     store.save(settings.with_profile(name, updated))
     app_context.notify(f"Workspace set to '{slug}' for profile '{name}'.")
+
+
+@APP.command(name="gpg-key", help="Print the workspace's GPG public key.")
+@handle_errors
+def gpg_key(ctx: typer.Context) -> None:
+    app_context = get_app_context(ctx)
+    app_context.write(app_context.workspace().gpg_public_key())

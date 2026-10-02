@@ -1,5 +1,11 @@
 # Directory Update Log
 
+## 2026-10-02
+
+* **Addition**: [`architecture/command-conventions.md`](architecture/command-conventions.md)
+  for `--yes`, `--from-file`, `--repo` and raw text output.
+* **Change**: [`coverage.md`](coverage.md) marks the 0.2.0 rows `done`.
+
 ## 2026-10-01 (2)
 
 * **Addition**: the 0.1.0 scaffold's notes: [`architecture/`](architecture/index.md)
