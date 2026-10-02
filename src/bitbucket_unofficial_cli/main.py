@@ -38,6 +38,7 @@ from bitbucket_unofficial_cli.commands import ref
 from bitbucket_unofficial_cli.commands import repo
 from bitbucket_unofficial_cli.commands import report
 from bitbucket_unofficial_cli.commands import search
+from bitbucket_unofficial_cli.commands import snippet
 from bitbucket_unofficial_cli.commands import source
 from bitbucket_unofficial_cli.commands import tag
 from bitbucket_unofficial_cli.commands import team
@@ -157,6 +158,7 @@ def create_app(services_factory: Callable[[], Services] = default_services) -> t
     cli.add_typer(pipeline.APP, name="pipeline")
     cli.add_typer(environment.APP, name="environment")
     cli.add_typer(deployment.APP, name="deployment")
+    cli.add_typer(snippet.APP, name="snippet")
     cli.add_typer(team.APP, name="team")
     cli.add_typer(search.APP, name="search")
     cli.add_typer(member.APP, name="member")
