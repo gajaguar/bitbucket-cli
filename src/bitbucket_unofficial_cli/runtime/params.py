@@ -76,3 +76,4 @@ OptionalRepo = Annotated[  # pylint: disable=gajaguar-module-const-naming,gajagu
     str | None,
     typer.Option("--repo", "-r", envvar="BITBUCKET_REPOSITORY", help="Repository slug; omit for the workspace."),
 ]
+PullRequestId = Annotated[int, typer.Argument(help="Pull request ID.")]  # pylint: disable=gajaguar-module-const-naming,gajaguar-require-final

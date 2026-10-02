@@ -2,6 +2,8 @@
 
 ## 2026-10-02
 
+* **Change**: [`coverage.md`](coverage.md) marks the 0.3.0 rows `done`.
+
 * **Addition**: [`architecture/command-conventions.md`](architecture/command-conventions.md)
   for `--yes`, `--from-file`, `--repo` and raw text output.
 * **Change**: [`coverage.md`](coverage.md) marks the 0.2.0 rows `done`.

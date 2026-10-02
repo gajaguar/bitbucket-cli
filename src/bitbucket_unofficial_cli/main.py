@@ -16,10 +16,12 @@ from bitbucket_unofficial_cli.auth.keyring_store import KeyringCredentialStore
 from bitbucket_unofficial_cli.auth.oauth import OAuthClient
 from bitbucket_unofficial_cli.auth.resolver import CredentialStores
 from bitbucket_unofficial_cli.commands import auth
+from bitbucket_unofficial_cli.commands import commit
 from bitbucket_unofficial_cli.commands import config
 from bitbucket_unofficial_cli.commands import hook_event
 from bitbucket_unofficial_cli.commands import member
 from bitbucket_unofficial_cli.commands import permission
+from bitbucket_unofficial_cli.commands import pr
 from bitbucket_unofficial_cli.commands import project
 from bitbucket_unofficial_cli.commands import repo
 from bitbucket_unofficial_cli.commands import user
@@ -121,6 +123,8 @@ def create_app(services_factory: Callable[[], Services] = default_services) -> t
     cli.add_typer(workspace.APP, name="workspace")
     cli.add_typer(repo.APP, name="repo")
     cli.add_typer(project.APP, name="project")
+    cli.add_typer(pr.APP, name="pr")
+    cli.add_typer(commit.APP, name="commit")
     cli.add_typer(member.APP, name="member")
     cli.add_typer(permission.APP, name="permission")
     cli.add_typer(webhook.APP, name="webhook")
