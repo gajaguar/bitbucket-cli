@@ -418,3 +418,32 @@ DEPLOYMENTS: Final = (
     Column("release.commit.hash", "Commit"),
     Column("state.start_date", "Started"),
 )
+
+EMAILS: Final = (
+    Column("email", "Email"),
+    Column("is_primary", "Primary"),
+    Column("is_confirmed", "Confirmed"),
+)
+
+SSH_KEYS: Final = (
+    Column("uuid", "UUID"),
+    Column("label", "Label"),
+    Column("fingerprint", "Fingerprint"),
+    Column("created_on", "Created"),
+    Column("last_used", "Last used"),
+    Column("expires_on", "Expires"),
+)
+
+GPG_KEYS: Final = (
+    Column("fingerprint", "Fingerprint"),
+    Column("name", "Name"),
+    Column("key_id", "Key ID"),
+    Column("created_on", "Created"),
+    Column("expires_on", "Expires"),
+)
+
+CODE_SEARCH: Final = (
+    Column("file.path", "Path"),
+    Column("content_match_count", "Matches"),
+    Column("file.commit.hash", "Commit"),
+)

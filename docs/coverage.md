@@ -32,11 +32,11 @@ Every capability of `bitbucket-unofficial-sdk` 1.0.1, grouped by SDK resource.
 | `ws.permissions` list, repositories, repository                   | `bitbucket permission list`                | 0.2.0   | planned |
 | `ws.gpg_public_key()`                                             | `bitbucket workspace gpg-key`              | 0.2.0   | planned |
 | `ws.pull_requests_by_author()`                                    | `bitbucket pr by-author`                   | 0.3.0   | done    |
-| `client.user.emails()`, `email()`                                 | `bitbucket user email list`, `get`         | 0.8.0   | planned |
-| `client.users(id).get()`                                          | `bitbucket user get`                       | 0.8.0   | planned |
-| `client.users(id).ssh_keys` CRUD, `gpg_keys`                      | `bitbucket user ssh-key`, `gpg-key`        | 0.8.0   | planned |
-| `client.users(id).pipelines_config.variables`, `client.teams(id)` | `bitbucket user variable`, `team variable` | 0.8.0   | planned |
-| `ws.search.code()`                                                | `bitbucket search code`                    | 0.8.0   | planned |
+| `client.user.emails()`, `email()`                                 | `bitbucket user email list`, `get`         | 0.8.0   | done    |
+| `client.users(id).get()`                                          | `bitbucket user get`                       | 0.8.0   | done    |
+| `client.users(id).ssh_keys` CRUD, `gpg_keys`                      | `bitbucket user ssh-key`, `gpg-key`        | 0.8.0   | done    |
+| `client.users(id).pipelines_config.variables`, `client.teams(id)` | `bitbucket user variable`, `team variable` | 0.8.0   | done    |
+| `ws.search.code()`                                                | `bitbucket search code`                    | 0.8.0   | done    |
 
 ## Repositories and projects
 
