@@ -29,6 +29,7 @@ output, the command surface and the settings keys; see
 - [Getting started](#getting-started)
 - [Usage](#usage)
 - [Configuration](#configuration)
+- [Agent skills](#agent-skills)
 - [Development](#development)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
@@ -186,6 +187,34 @@ Without `--output`, a terminal gets a table and a pipe gets JSON.
 | `BITBUCKET_PROFILE`             | Default profile                                            |
 | `BITBUCKET_OUTPUT`              | Default output format                                      |
 | `BITBUCKET_CLI_CONFIG_DIR`      | Where `config.toml` and `credentials.toml` live            |
+
+## Agent skills
+
+The repository is also a Claude Code plugin. Pick one channel:
+
+```text
+# Claude Code
+/plugin marketplace add gajaguar/bitbucket-cli
+/plugin install bitbucket-cli@bitbucket-cli-skills
+```
+
+```bash
+# Any Agent Skills-compatible agent
+npx skills add gajaguar/bitbucket-cli
+
+# opencode
+npx skills add gajaguar/bitbucket-cli -a opencode -y
+```
+
+- `bitbucket-pull-requests` covers `pr`, its comments, tasks and statuses.
+- `bitbucket-pipelines` covers `pipeline`, `environment` and `deployment`.
+- `bitbucket-cli` covers authentication, profiles, workspaces, repositories,
+  branches, commits, source, permissions, webhooks and snippets.
+
+The skills follow the [Agent Skills](https://agentskills.io/specification)
+format, so other agents can read `skills/` directly. They require the CLI to
+be installed and a user to have run `bitbucket auth login`. See
+[`docs/agents/`](docs/agents/index.md) for what each install channel does.
 
 ## Development
 

@@ -134,11 +134,13 @@ class FakeBrowser:
 
 
 # The developer's own credentials must never reach a test: Typer, the SDK and the env store all read these.
+# Typer forces ANSI styling when GITHUB_ACTIONS is set, which splits an option name in the help text.
 @pytest.fixture(autouse=True)  # ruff: ignore[pytest-fixture-autouse]  every test must start without real credentials
 def clean_environment(monkeypatch: pytest.MonkeyPatch) -> None:
     for name in list(os.environ):
         if name.startswith(("ATLASSIAN_", "BITBUCKET_")):
             monkeypatch.delenv(name)
+    monkeypatch.delenv("GITHUB_ACTIONS", raising=False)
 
 
 @pytest.fixture(name="memory_keyring")

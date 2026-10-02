@@ -1,0 +1,15 @@
+{
+  "name": "bitbucket-cli-skills",
+  "description": "Bitbucket Cloud skills for Claude Code",
+  "owner": {
+    "name": "G.A.JAGUAR",
+    "email": "dev@gajaguar.com"
+  },
+  "plugins": [
+    {
+      "name": "bitbucket-cli",
+      "source": "./",
+      "description": "Skills that teach an agent to drive the unofficial Bitbucket CLI"
+    }
+  ]
+}

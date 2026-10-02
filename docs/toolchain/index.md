@@ -8,3 +8,5 @@ and why.
 * [Rejected install backends](rejected-install-backends.md) - the mise
   `npm:`/`pipx:` backends and pre-commit-managed environments this rules
   out.
+* [The Claude Code plugin](claude-plugin.md) - the plugin and marketplace
+  manifests, and the three skills they ship.

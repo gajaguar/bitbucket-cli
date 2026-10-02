@@ -1,5 +1,16 @@
 # Directory Update Log
 
+## 2026-10-02 (2)
+
+* **Addition**: [`agents/`](agents/index.md) with `plugin-identity.md`,
+  `install-channels.md`, `agent-skills-format.md`,
+  `claude-code-marketplace-install.md`, `claude-code-shell-install.md`,
+  `claude-code-install-scopes.md`, `claude-code-skill-invocation.md`,
+  `claude-code-plugin-updates.md`, `npx-skills-install.md`,
+  `npx-skills-manage.md`, `opencode-skill-discovery.md` and
+  `opencode-skill-permissions.md`.
+* **Addition**: [`toolchain/claude-plugin.md`](toolchain/claude-plugin.md).
+
 ## 2026-10-02
 
 * **Change**: [`roadmap.md`](roadmap.md) and [`coverage.md`](coverage.md) are

@@ -118,3 +118,6 @@ Once a pull request is open, the agent MUST:
 - Update [`docs/coverage.md`](docs/coverage.md) in the same change that adds or
   changes a command, and the release table in
   [`docs/roadmap.md`](docs/roadmap.md) when a release's scope moves.
+- Update the matching `skills/*/SKILL.md` in the same change that adds or
+  changes a command, and keep `.claude-plugin/plugin.json`'s `version` equal to
+  `project.version`.
