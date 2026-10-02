@@ -2,6 +2,9 @@
 
 ## 2026-10-02
 
+* **Change**: [`roadmap.md`](roadmap.md) and [`coverage.md`](coverage.md) are
+  `stable`: 1.0.0 freezes the contract and every SDK row is `done`.
+
 * **Change**: [`coverage.md`](coverage.md) marks the 0.9.0 rows `done`.
 
 * **Change**: [`coverage.md`](coverage.md) marks the 0.8.0 rows `done`.

@@ -3,13 +3,13 @@ type: reference
 title: SDK coverage
 description: Each capability of bitbucket-unofficial-sdk, the CLI command that wraps it, the release that adds it and its status.
 tags: [roadmap, sdk]
-status: draft
+status: stable
 ---
 
 # SDK coverage
 
 Every capability of `bitbucket-unofficial-sdk` 1.0.1, grouped by SDK resource.
-`1.0.0` needs every row `done`. The notation is:
+Every row is `done` as of `1.0.0`. The notation is:
 
 - **SDK** gives the access path: `ws` is a `WorkspaceClient`, `repo` a
   `RepositoryClient`, `project` a `ProjectClient`, `snippet` a `SnippetClient`.
