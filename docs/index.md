@@ -12,6 +12,8 @@ out under this directory.
 
 * [Architecture](architecture/index.md) - the layers, the output formats and
   the exit codes.
+* [Agents](agents/index.md) - install the agent skills in Claude Code,
+  `npx skills` and opencode.
 * [Authentication](auth/index.md) - the credential kinds and how to set up an
   OAuth consumer.
 * [Conventions](conventions/index.md) - commit and branch naming, how they're
