@@ -1,6 +1,6 @@
 {
   "name": "bitbucket-cli",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Bitbucket Cloud pull-request, pipeline and repository skills for Claude Code",
   "author": {
     "name": "G.A.JAGUAR",
