@@ -27,6 +27,13 @@ repos:
         language: system
         pass_filenames: false
 
+      - id: docs-lint
+        name: okflint
+        entry: make docs-lint
+        language: system
+        files: ^(docs/.*\.md|okf-base\.yaml)$
+        pass_filenames: false
+
       - id: conventional-commit-msg
         name: conventional-git commit message
         entry: uvx conventional-git@latest check commit --file

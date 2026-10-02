@@ -2,7 +2,7 @@
 type: playbook
 title: Releasing the CLI
 description: How a change bumps the version, which bumps get a tag, and how a release reaches PyPI as bitbucket-unofficial-cli.
-tags: [release]
+tags: [release, git, versioning]
 status: stable
 ---
 

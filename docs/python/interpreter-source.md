@@ -2,7 +2,7 @@
 type: decision
 title: Interpreter source
 description: mise.toml is the single source for the pinned Python version; uv is forced to use the mise-provided interpreter instead of downloading its own.
-tags: [python]
+tags: [python, toolchain]
 status: stable
 ---
 

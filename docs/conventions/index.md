@@ -12,3 +12,5 @@ Commit and branch naming, how they're enforced, and versioning.
   target without its `##` help line.
 * [No CLAUDE.md check](claude-md-check.md) - `make claude-md-check` fails when
   a `CLAUDE.md` exists, since `AGENTS.md` is the only agent file.
+* [Tag vocabulary](tag-vocabulary.md) - the tags the notes carry and what
+  each one means.

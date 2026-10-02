@@ -44,5 +44,7 @@ opencode, and learn what each channel delivers.
   opencode scans, the worktree walk-up rule, and name validation.
 * [opencode skill permissions](opencode-skill-permissions.md) -
   `permission.skill` and the per-agent `skill: false` switch.
+* [opencode MCP configuration](opencode-mcp-config.md) - the `mcp` key,
+  config path precedence, and `opencode mcp list`.
 
 See [`log.md`](../log.md) for the bundle's change history.

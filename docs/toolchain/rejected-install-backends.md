@@ -1,7 +1,7 @@
 ---
 type: decision
 title: Rejected install backends
-description: Why mise's npm:/pipx: backends and pre-commit-managed tool environments were ruled out in favor of the layering rule.
+description: "Why mise's npm:/pipx: backends and pre-commit-managed tool environments were ruled out in favor of the layering rule."
 tags: [toolchain]
 status: stable
 ---
