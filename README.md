@@ -17,9 +17,8 @@ It logs in with an Atlassian API token, an access token or an OAuth 2
 consumer, and prints results as a table, JSON, JSON Lines, CSV or bare
 identifiers.
 
-`0.1.0` is a scaffold: authentication, configuration, output formats and the
-first read commands. The roadmap adds one area per minor release until the CLI
-covers everything the SDK offers, which is `1.0.0`; see
+`1.0.0` covers everything the SDK offers, and freezes the exit codes, the JSON
+output, the command surface and the settings keys; see
 [`docs/roadmap.md`](docs/roadmap.md).
 
 ## Table of contents
@@ -213,7 +212,7 @@ set; run them with `uv run pytest -m live`.
 - [x] `0.7.0` Environments and deployments
 - [x] `0.8.0` Keys, emails, search
 - [x] `0.9.0` Snippets
-- [ ] `1.0.0` Every SDK capability, with the contracts frozen
+- [x] `1.0.0` Every SDK capability, with the contracts frozen
 
 The detail, and what `1.0.0` freezes, is in [`docs/roadmap.md`](docs/roadmap.md).
 [`docs/coverage.md`](docs/coverage.md) maps each SDK capability to its command.

@@ -1,9 +1,9 @@
 ---
 type: playbook
 title: Roadmap
-description: The releases that take the CLI from the 0.1.0 scaffold to 1.0.0, when it exposes every capability of bitbucket-unofficial-sdk.
+description: The releases that took the CLI from the 0.1.0 scaffold to 1.0.0, which exposes every capability of bitbucket-unofficial-sdk.
 tags: [roadmap]
-status: draft
+status: stable
 ---
 
 # Roadmap
@@ -43,7 +43,9 @@ as long as the SDK keeps it, and a later release removes it with the SDK.
 
 ## What 1.0.0 freezes
 
-From `1.0.0` a breaking change needs a major version. The contract is:
+From `1.0.0` a breaking change needs a major version. `tests/unit/test_contract.py`
+pins the exit codes, the command groups, the global options and the keys of
+`config.toml`. The contract is:
 
 - **Exit codes.** The values in
   [Output formats, streams and exit codes](architecture/output-and-exit-codes.md).
