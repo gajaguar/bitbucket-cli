@@ -10,3 +10,5 @@ and why.
   out.
 * [The Claude Code plugin](claude-plugin.md) - the plugin and marketplace
   manifests, and the three skills they ship.
+* [Re-tag the notes](retag-notes.md) - run `make docs-retag`, review the
+  dry run, then write the tags.

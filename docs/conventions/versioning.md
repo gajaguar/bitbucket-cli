@@ -2,7 +2,7 @@
 type: decision
 title: Versioning, tags and releases
 description: SemVer decides every version bump, a minor or major bump gets a Git tag, and publishing a release is on demand.
-tags: [release, versioning]
+tags: [release, versioning, git]
 status: stable
 ---
 

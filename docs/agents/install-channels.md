@@ -2,9 +2,9 @@
 type: guideline
 title: Install channels
 description: Three ways to install agent skills today (the Claude Code marketplace, the npx skills CLI, and opencode's native skill tool) and what each delivers.
-tags: [agents, install]
+tags: [agents, install, toolchain]
 status: stable
-stale_after: 2027-03-29T00:00:00Z
+stale_after: 2027-03-29
 sources:
   - id: claude-discover-plugins
     resource: https://code.claude.com/docs/en/discover-plugins
@@ -25,11 +25,11 @@ sources:
 A project that ships agent assets can be installed three ways. Pick
 the channel that matches the user's agent.
 
-| Channel             | Installs                | Auto-update |
-| :------------------ | :---------------------- | :---------- |
-| Claude Code plugin  | Skills (and any hooks)  | Opt-in      |
-| `npx skills`        | Skills only             | No          |
-| opencode skill tool | Skills only             | No          |
+| Channel             | Installs                    | Auto-update | MCP |
+| :------------------ | :-------------------------- | :---------- | :-- |
+| Claude Code plugin  | Skills + plugin hooks + MCP | Opt-in      | Yes |
+| `npx skills`        | Skills only                 | No          | No  |
+| opencode skill tool | Skills only                 | No          | No  |
 
 For a Claude Code plugin, auto-update is off by default for third-party
 marketplaces and on for the official Anthropic marketplaces. For
@@ -38,9 +38,9 @@ marketplaces and on for the official Anthropic marketplaces. For
 ## Claude Code plugin
 
 A Claude Code plugin is the richest channel: a marketplace install
-pulls the skills and runs any plugin hooks. Auto-update is off by default
-for third-party marketplaces; turn it on per marketplace or update by hand, as
-described in
+pulls the skills, runs any plugin hooks, and registers the bundled MCP
+servers from `.mcp.json`. Auto-update is off by default for third-party
+marketplaces; turn it on per marketplace or update by hand, as described in
 [`claude-code-plugin-updates.md`](claude-code-plugin-updates.md).[^claude-discover-plugins]
 
 ## `npx skills`
@@ -56,7 +56,9 @@ copies instead of symlinks (`--copy`); see
 
 opencode does not have a plugin marketplace. It reads skills from a
 small, fixed set of paths and exposes them through the `skill` tool;
-see [`opencode-skill-discovery.md`](opencode-skill-discovery.md).[^opencode-skills]
+see [`opencode-skill-discovery.md`](opencode-skill-discovery.md).
+For MCP, opencode reads `mcp` blocks from its own config file; see
+[`opencode-mcp-config.md`](opencode-mcp-config.md).[^opencode-skills]
 
 [^claude-discover-plugins]: Discover and install Claude Code plugins
 [^vercel-skills]: vercel-labs/skills (the `npx skills` CLI)

@@ -7,6 +7,9 @@ mise.local.toml
 # Obsidian vault metadata (docs/ is opened directly as a vault)
 .obsidian/
 
+# Answers and batches of `make docs-retag`
+.cache/
+
 # Created by https://www.toptal.com/developers/gitignore/api/linux,macos,jetbrains+all,visualstudiocode,node,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,jetbrains+all,visualstudiocode,node,python
 

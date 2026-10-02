@@ -2,7 +2,7 @@
 type: playbook
 title: Roadmap
 description: The releases that took the CLI from the 0.1.0 scaffold to 1.0.0, which exposes every capability of bitbucket-unofficial-sdk.
-tags: [roadmap]
+tags: [roadmap, release]
 status: stable
 ---
 

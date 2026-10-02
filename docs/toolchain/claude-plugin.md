@@ -2,7 +2,7 @@
 type: tool
 title: The Claude Code plugin
 description: The repository root is a Claude Code plugin whose three skills teach an agent to drive the bitbucket CLI.
-tags: [toolchain, agents]
+tags: [agents]
 status: stable
 ---
 

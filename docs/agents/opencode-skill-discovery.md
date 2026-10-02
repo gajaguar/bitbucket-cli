@@ -4,7 +4,7 @@ title: opencode skill discovery
 description: The project and global paths opencode reads skills from, the walk-up to the git worktree, and the name and description rules.
 tags: [agents, opencode]
 status: stable
-stale_after: 2027-03-29T00:00:00Z
+stale_after: 2027-03-29
 sources:
   - id: opencode-skills
     resource: https://opencode.ai/docs/skills/

@@ -2,7 +2,7 @@
 type: rule
 title: No CLAUDE.md check
 description: make claude-md-check fails when a CLAUDE.md exists anywhere in the repository, because AGENTS.md is the only agent instructions file.
-tags: [agents]
+tags: [agents, documentation, makefile]
 status: stable
 ---
 

@@ -4,7 +4,7 @@ title: Installing skills with `npx skills`
 description: npx skills add installs a repository's skills into one or more agent paths, symlinked by default, with flags for agent, scope, skill selection, and list-only.
 tags: [agents, npx-skills]
 status: stable
-stale_after: 2027-03-29T00:00:00Z
+stale_after: 2027-03-29
 sources:
   - id: vercel-skills
     resource: https://github.com/vercel-labs/skills
@@ -20,7 +20,7 @@ sources:
 
 `npx skills` ([vercel-labs/skills](https://github.com/vercel-labs/skills))
 installs a repository's skills into the path each agent expects, with no
-plugin hooks. By default it symlinks each agent to one canonical
+plugin hooks or MCP. By default it symlinks each agent to one canonical
 copy; pass `--copy` for independent copies. It is the right channel when
 the agent is not Claude Code or the project does not need
 auto-update.[^vercel-skills]

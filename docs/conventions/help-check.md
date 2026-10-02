@@ -2,7 +2,7 @@
 type: rule
 title: Help-line check
 description: make help-check fails when a Makefile target has no ## help line, so make help lists every target.
-tags: [makefile]
+tags: [makefile, documentation]
 status: stable
 ---
 

@@ -61,7 +61,8 @@ Once a pull request is open, the agent MUST:
   Markdown concept per file, with YAML frontmatter (`type`, `title`,
   `description`).
 - Add a new note to its directory's `index.md` and, by file name, to
-  [`docs/log.md`](docs/log.md).
+  [`docs/log.md`](docs/log.md); `make docs-lint` fails on a missing field or a
+  broken link.
 - Write a note only when it explains something a reader cannot already get
   from `make help`, a linter's own message, or the configuration it comes
   from.

@@ -13,6 +13,11 @@ FILES ?=
 # docs/conventions/commits-check.md.
 BASE ?= origin/main
 CONVENTIONAL_GIT ?= uvx conventional-git@latest
+# Pinned, not @latest: a linter's verdict changes between versions. See
+# docs/toolchain/okflint.md and docs/documentation/retag-notes.md.
+OKFLINT ?= uvx okflint@0.4.1
+TYPESAFE ?= uvx --from typesafe-unofficial-cli@1.1.0 typesafe
+DOCS_RETAG := uv run --script tools/docs-retag.py
 BRANCH ?= $(or $(GITHUB_HEAD_REF),$(shell git branch --show-current))
 
 .DEFAULT_GOAL := help
@@ -81,9 +86,12 @@ claude-md-check: ## Fail if a CLAUDE.md exists, since AGENTS.md is the only agen
 	@found=$$(git ls-files --cached --others --exclude-standard | grep -E '(^|/)CLAUDE\.md$$' || true); \
 	test -z "$$found" || { echo "CLAUDE.md found; fold it into AGENTS.md and delete it:" >&2; echo "$$found" >&2; exit 1; }
 
-check: makefile-lint md-lint spell commits-check help-check claude-md-check $(LANG_CHECK_TARGETS) ## Run the full read-only validation gate
+docs-lint: ## Validate docs/ as an OKF bundle with okflint — see docs/toolchain/okflint.md
+	@$(OKFLINT) validate
 
-.PHONY: makefile-lint md-lint spell commits-check help-check claude-md-check check
+check: makefile-lint md-lint spell docs-lint commits-check help-check claude-md-check $(LANG_CHECK_TARGETS) ## Run the full read-only validation gate
+
+.PHONY: makefile-lint md-lint spell docs-lint commits-check help-check claude-md-check check
 
 ##@ Writable fixes (mutate files in place)
 
@@ -114,3 +122,16 @@ fix-unsafe: _md-fix-scoped $(LANG_FIX_UNSAFE_TARGETS) ## Apply all auto-fixes, i
 test: $(LANG_TEST_TARGETS) ## Run the test suite
 
 .PHONY: test
+
+##@ Docs tagging (optional, billed — not part of check)
+
+docs-retag: ## Ask TypeSafe which tags each docs/ note carries, then show a dry run — one billed request per note
+	@$(DOCS_RETAG) build
+	@$(TYPESAFE) -o jsonl ask --states-file .cache/docs-retag/states.jsonl --questions-file .cache/docs-retag/questions.json --concurrency 4 > .cache/docs-retag/answers.jsonl
+	@$(DOCS_RETAG) apply
+
+docs-retag-apply: ## Write the tags from the last docs-retag run into the notes, then validate docs/
+	@$(DOCS_RETAG) apply --write
+	@$(MAKE) docs-lint
+
+.PHONY: docs-retag docs-retag-apply
