@@ -212,7 +212,7 @@ set; run them with `uv run pytest -m live`.
 - [x] `0.6.0` Pipelines
 - [x] `0.7.0` Environments and deployments
 - [x] `0.8.0` Keys, emails, search
-- [ ] `0.9.0` Snippets
+- [x] `0.9.0` Snippets
 - [ ] `1.0.0` Every SDK capability, with the contracts frozen
 
 The detail, and what `1.0.0` freezes, is in [`docs/roadmap.md`](docs/roadmap.md).
