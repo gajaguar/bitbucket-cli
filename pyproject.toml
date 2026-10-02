@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bitbucket-cli"
+version = "0.1.0"
+description = "Unofficial command-line interface for Bitbucket Cloud built on bitbucket-unofficial-sdk"
+readme = "README.md"
+authors = [{ name = "G.A.JAGUAR", email = "dev@gajaguar.com" }]
+license = "MIT"
+requires-python = ">=3.14"
+
+[project.scripts]
+bitbucket-cli = "bitbucket_unofficial_cli.main:main"
+
+[dependency-groups]
+dev = [
+  "conventional-git>=1.1",
+  "mypy>=2.3.1",
+  "pylint-gajaguar>=2.0.1",
+  "pylint>=4.0.9",
+  "pyright>=1.1.414",
+  "pytest-cov>=7.1",
+  "pytest>=9.1",
+  "ruff>=0.16.8",
+]
+
+[tool.pytest.ini_options]
+addopts = "--cov=src --cov-report=term-missing"
+
+[tool.coverage.report]
+exclude_also = ["if __name__ == .__main__.:"]
+
+[tool.ruff]
+line-length = 119
+lint.select = ["ALL"]
+lint.ignore = ["CPY", "D", "missing-trailing-comma"]
+lint.isort.force-single-line = true
+lint.per-file-ignores."tests/**/*.py" = ["assert"]
+
+[tool.mypy]
+strict = true
+exclude = ["tests/"]
+
+[tool.pyright]
+include = ["src"]
+
+[tool.pylint.main]
+load-plugins = ["pylint_gajaguar"]
+
+[tool.pylint."messages control"]
+disable = ["all"]
+enable = ["gajaguar"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bitbucket_unofficial_cli"]

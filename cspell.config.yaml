@@ -1,0 +1,26 @@
+version: "0.2"
+language: en
+allowCompoundWords: true
+
+dictionaryDefinitions:
+  - name: project-words
+    path: ./dictionary.txt
+
+dictionaries:
+  - project-words
+  - bash
+  - filetypes
+  - python
+
+ignorePaths:
+  - "**/node_modules/**"
+  - "**/*.lock"
+  - "**/pnpm-lock.yaml"
+  - ".gitignore" # vendored toptal.com boilerplate, not authored here
+  - "scripts/templates/gitignore/snapshot" # same toptal.com boilerplate, vendored as a fallback
+  - "**/.venv/**"
+  - "**/.mypy_cache/**"
+  - "**/.ruff_cache/**"
+  - "**/.pytest_cache/**"
+  - "**/htmlcov/**"
+  - "**/uv.lock"

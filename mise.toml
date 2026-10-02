@@ -1,0 +1,14 @@
+[tools]
+node = "24"
+pnpm = "12"
+pre-commit = "4"
+checkmake = "0.3.2"
+python = "3.14"
+uv = "0.12"
+
+[settings.npm]
+package_manager = "pnpm"
+
+[env]
+UV_PYTHON_PREFERENCE = "only-system"
+UV_PYTHON_DOWNLOADS = "never"
