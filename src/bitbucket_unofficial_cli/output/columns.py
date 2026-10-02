@@ -207,3 +207,64 @@ PULL_REQUEST_STATUSES: Final = (
     Column("url", "URL"),
     Column("updated_on", "Updated"),
 )
+
+BRANCHES: Final = (
+    Column("name", "Branch"),
+    Column("target.hash", "Commit"),
+    Column("default_merge_strategy", "Merge strategy"),
+)
+
+TAGS: Final = (
+    Column("name", "Tag"),
+    Column("target.hash", "Commit"),
+    Column("tagger.display_name", "Tagger"),
+    Column("date", "Date"),
+    Column("message", "Message"),
+)
+
+REFS: Final = (Column("type", "Type"), Column("name", "Name"), Column("target.hash", "Commit"))
+
+COMMIT: Final = (
+    *COMMITS,
+    Column("committer.raw", "Committer"),
+    Column("parents", "Parents"),
+)
+
+TREE: Final = (
+    Column("path", "Path"),
+    Column("type", "Type"),
+    Column("size", "Size"),
+    Column("commit.hash", "Commit"),
+)
+
+FILE_HISTORY: Final = (Column("path", "Path"), Column("commit.hash", "Commit"))
+
+REPORTS: Final = (
+    Column("external_id", "ID"),
+    Column("title", "Title"),
+    Column("reporter", "Reporter"),
+    Column("report_type", "Type"),
+    Column("result", "Result"),
+    Column("updated_on", "Updated"),
+)
+
+REPORT: Final = (*REPORTS, Column("details", "Details"), Column("link", "Link"), Column("uuid", "UUID"))
+
+ANNOTATIONS: Final = (
+    Column("external_id", "ID"),
+    Column("title", "Title"),
+    Column("annotation_type", "Type"),
+    Column("severity", "Severity"),
+    Column("result", "Result"),
+    Column("path", "Path"),
+    Column("line", "Line"),
+    Column("summary", "Summary"),
+)
+
+DOWNLOADS: Final = (
+    Column("name", "File"),
+    Column("size", "Size"),
+    Column("downloads", "Downloads"),
+    Column("user.display_name", "Uploaded by"),
+    Column("created_on", "Created"),
+)

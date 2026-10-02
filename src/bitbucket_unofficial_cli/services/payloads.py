@@ -41,4 +41,17 @@ def build[T: BitbucketModel](model: type[T], source: str | None = None, /, **fie
         raise CliError(message, exit_code=ExitCode.USAGE) from error
 
 
-__all__ = ["build"]
+# For bulk uploads: --from-file holds a JSON array of bodies.
+def build_many[T: BitbucketModel](model: type[T], source: str) -> list[T]:
+    loaded = _read(source)
+    if not isinstance(loaded, list):
+        message = "The JSON body must be an array."
+        raise CliError(message, exit_code=ExitCode.USAGE)
+    try:
+        return [model.model_validate(item) for item in loaded]
+    except ValidationError as error:
+        message = f"Invalid {model.__name__}: {error}"
+        raise CliError(message, exit_code=ExitCode.USAGE) from error
+
+
+__all__ = ["build", "build_many"]
