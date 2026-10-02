@@ -52,3 +52,27 @@ class PagingOptions:
         str | None,
         typer.Option("--cursor", help="Fetch one page starting at this cursor; the next one is printed to stderr."),
     ] = None
+
+
+@dataclass(frozen=True, slots=True, kw_only=True)
+class QueryOptions(PagingOptions):
+    query: Annotated[
+        str | None,
+        typer.Option("--query", "-q", help="Bitbucket query filter, e.g. 'is_private=true'."),
+    ] = None
+    sort: Annotated[str | None, typer.Option("--sort", help="Field to sort by; prefix with - to reverse.")] = None
+
+
+Yes = Annotated[bool, typer.Option("--yes", "-y", help="Do not ask for confirmation.")]  # pylint: disable=gajaguar-module-const-naming,gajaguar-require-final
+Repo = Annotated[  # pylint: disable=gajaguar-module-const-naming,gajaguar-require-final
+    str,
+    typer.Option("--repo", "-r", envvar="BITBUCKET_REPOSITORY", help="Repository slug."),
+]
+FromFile = Annotated[  # pylint: disable=gajaguar-module-const-naming,gajaguar-require-final
+    str | None,
+    typer.Option("--from-file", help="JSON request body from a file, or - for stdin; flags override its fields."),
+]
+OptionalRepo = Annotated[  # pylint: disable=gajaguar-module-const-naming,gajaguar-require-final
+    str | None,
+    typer.Option("--repo", "-r", envvar="BITBUCKET_REPOSITORY", help="Repository slug; omit for the workspace."),
+]

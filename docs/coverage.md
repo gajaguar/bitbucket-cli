@@ -40,15 +40,15 @@ Every capability of `bitbucket-unofficial-sdk` 1.0.1, grouped by SDK resource.
 
 ## Repositories and projects
 
-| SDK                                                                          | CLI command                                 | Release | Status  |
-| ---------------------------------------------------------------------------- | ------------------------------------------- | ------- | ------- |
-| `ws.repositories.list()`, `get()`                                            | `bitbucket repo list`, `get`                | 0.1.0   | done    |
-| `ws.repositories.create()`, `update()`, `delete()`                           | `bitbucket repo create`, `update`, `delete` | 0.2.0   | planned |
-| `ws.repositories.create_fork()`, `forks()`, `watchers()`                     | `bitbucket repo fork`, `forks`, `watchers`  | 0.2.0   | planned |
-| `ws.repositories.hooks()` CRUD, `client.hook_events`                         | `bitbucket webhook`, `hook-event`           | 0.2.0   | planned |
-| `ws.repositories.commit_pull_requests()`, `pull_request_activity()`          | `bitbucket commit prs`, `pr activity`       | 0.3.0   | planned |
-| `ws.projects` CRUD                                                           | `bitbucket project`                         | 0.2.0   | planned |
-| `project.default_reviewers`, `branching_model`, `permissions`, `deploy_keys` | `bitbucket project ...`                     | 0.5.0   | planned |
+| SDK                                                                          | CLI command                                     | Release | Status  |
+| ---------------------------------------------------------------------------- | ----------------------------------------------- | ------- | ------- |
+| `ws.repositories.list()`, `get()`                                            | `bitbucket repo list`, `get`                    | 0.1.0   | done    |
+| `ws.repositories.create()`, `update()`, `delete()`                           | `bitbucket repo create`, `update`, `delete`     | 0.2.0   | planned |
+| `ws.repositories.create_fork()`, `forks()`, `watchers()`                     | `bitbucket repo fork`, `forks`, `watchers`      | 0.2.0   | planned |
+| `ws.repositories.hooks()` CRUD, `client.hook_events`                         | `bitbucket webhook`, `hook-event types`, `list` | 0.2.0   | planned |
+| `ws.repositories.commit_pull_requests()`, `pull_request_activity()`          | `bitbucket commit prs`, `pr activity`           | 0.3.0   | planned |
+| `ws.projects` CRUD                                                           | `bitbucket project`                             | 0.2.0   | planned |
+| `project.default_reviewers`, `branching_model`, `permissions`, `deploy_keys` | `bitbucket project ...`                         | 0.5.0   | planned |
 
 ## Pull requests
 

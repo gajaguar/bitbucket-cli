@@ -6,3 +6,5 @@ How the CLI is layered and what it prints.
   the only way to reach Bitbucket.
 * [Output formats, streams and exit codes](output-and-exit-codes.md) - the
   five formats, what goes to stdout and stderr, and the frozen exit codes.
+* [Command conventions](command-conventions.md) - the shared options
+  `--yes`, `--from-file` and `--repo`, and how raw text is printed.
