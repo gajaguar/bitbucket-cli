@@ -3,6 +3,7 @@ from __future__ import annotations
 import itertools
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
+from typing import Any
 
 from bitbucket_unofficial_cli.runtime.errors import CliError
 from bitbucket_unofficial_cli.runtime.exit_codes import ExitCode
@@ -47,7 +48,7 @@ def collect[T](
 
 
 # NestedResource.list takes only set values, so unset filters are dropped before the call.
-def filters(**values: str | None) -> dict[str, str]:
+def filters(**values: str | list[str] | None) -> dict[str, Any]:
     return {name: value for name, value in values.items() if value is not None}
 
 

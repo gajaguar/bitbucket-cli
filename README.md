@@ -206,7 +206,7 @@ set; run them with `uv run pytest -m live`.
 - [x] `0.1.0` Foundation: authentication, configuration, output, `user me`,
   workspace and repository read commands
 - [x] `0.2.0` Repositories, projects, members, webhooks
-- [ ] `0.3.0` Pull requests
+- [x] `0.3.0` Pull requests
 - [ ] `0.4.0` Branches, tags, commits, source, statuses, reports, downloads
 - [ ] `0.5.0` Branch restrictions, branching model, reviewers, permissions
 - [ ] `0.6.0` Pipelines

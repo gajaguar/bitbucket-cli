@@ -31,7 +31,7 @@ Every capability of `bitbucket-unofficial-sdk` 1.0.1, grouped by SDK resource.
 | `ws.my_permission()`, `ws.my_repository_permissions()`            | `bitbucket permission mine`                | 0.2.0   | planned |
 | `ws.permissions` list, repositories, repository                   | `bitbucket permission list`                | 0.2.0   | planned |
 | `ws.gpg_public_key()`                                             | `bitbucket workspace gpg-key`              | 0.2.0   | planned |
-| `ws.pull_requests_by_author()`                                    | `bitbucket pr by-author`                   | 0.3.0   | planned |
+| `ws.pull_requests_by_author()`                                    | `bitbucket pr by-author`                   | 0.3.0   | done    |
 | `client.user.emails()`, `email()`                                 | `bitbucket user email list`, `get`         | 0.8.0   | planned |
 | `client.users(id).get()`                                          | `bitbucket user get`                       | 0.8.0   | planned |
 | `client.users(id).ssh_keys` CRUD, `gpg_keys`                      | `bitbucket user ssh-key`, `gpg-key`        | 0.8.0   | planned |
@@ -46,20 +46,20 @@ Every capability of `bitbucket-unofficial-sdk` 1.0.1, grouped by SDK resource.
 | `ws.repositories.create()`, `update()`, `delete()`                           | `bitbucket repo create`, `update`, `delete`     | 0.2.0   | planned |
 | `ws.repositories.create_fork()`, `forks()`, `watchers()`                     | `bitbucket repo fork`, `forks`, `watchers`      | 0.2.0   | planned |
 | `ws.repositories.hooks()` CRUD, `client.hook_events`                         | `bitbucket webhook`, `hook-event types`, `list` | 0.2.0   | planned |
-| `ws.repositories.commit_pull_requests()`, `pull_request_activity()`          | `bitbucket commit prs`, `pr activity`           | 0.3.0   | planned |
+| `ws.repositories.commit_pull_requests()`, `pull_request_activity()`          | `bitbucket commit prs`, `pr activity`           | 0.3.0   | done    |
 | `ws.projects` CRUD                                                           | `bitbucket project`                             | 0.2.0   | planned |
 | `project.default_reviewers`, `branching_model`, `permissions`, `deploy_keys` | `bitbucket project ...`                         | 0.5.0   | planned |
 
 ## Pull requests
 
-| SDK                                                                       | CLI command                                    | Release | Status  |
-| ------------------------------------------------------------------------- | ---------------------------------------------- | ------- | ------- |
-| `repo.pull_requests` create, get, list, update                            | `bitbucket pr create`, `get`, `list`, `update` | 0.3.0   | planned |
-| `approve`, `unapprove`, `request_changes`, `unrequest_changes`, `decline` | `bitbucket pr approve`, `decline`, ...         | 0.3.0   | planned |
-| `merge`, `merge_task_status`, `merge_and_wait`, `mergeability_checks`     | `bitbucket pr merge`, `checks`                 | 0.3.0   | planned |
-| `diff`, `patch`, `diffstat`, `commits`, `conflicts`, `activity`           | `bitbucket pr diff`, `patch`, `files`, ...     | 0.3.0   | planned |
-| `comments(id)` CRUD, `resolve`, `unresolve`                               | `bitbucket pr comment`                         | 0.3.0   | planned |
-| `tasks(id)` CRUD, `statuses(id)`, `properties(id)`                        | `bitbucket pr task`, `status`, `property`      | 0.3.0   | planned |
+| SDK                                                                       | CLI command                                    | Release | Status |
+| ------------------------------------------------------------------------- | ---------------------------------------------- | ------- | ------ |
+| `repo.pull_requests` create, get, list, update                            | `bitbucket pr create`, `get`, `list`, `update` | 0.3.0   | done   |
+| `approve`, `unapprove`, `request_changes`, `unrequest_changes`, `decline` | `bitbucket pr approve`, `decline`, ...         | 0.3.0   | done   |
+| `merge`, `merge_task_status`, `merge_and_wait`, `mergeability_checks`     | `bitbucket pr merge`, `checks`                 | 0.3.0   | done   |
+| `diff`, `patch`, `diffstat`, `commits`, `conflicts`, `activity`           | `bitbucket pr diff`, `patch`, `files`, ...     | 0.3.0   | done   |
+| `comments(id)` CRUD, `resolve`, `unresolve`                               | `bitbucket pr comment`                         | 0.3.0   | done   |
+| `tasks(id)` CRUD, `statuses(id)`, `properties(id)`                        | `bitbucket pr task`, `status`, `property`      | 0.3.0   | done   |
 
 ## Refs, commits and source
 

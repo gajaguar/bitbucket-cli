@@ -25,7 +25,7 @@ def _read(source: str) -> object:
 
 # Flags left at None are unset, so only what the caller named reaches the wire (the SDK dumps with
 # exclude_unset); a flag wins over the same field in --from-file.
-def build[T: BitbucketModel](model: type[T], source: str | None = None, **fields: object) -> T:
+def build[T: BitbucketModel](model: type[T], source: str | None = None, /, **fields: object) -> T:
     body: dict[str, object] = {}
     if source is not None:
         loaded = _read(source)
