@@ -447,3 +447,13 @@ CODE_SEARCH: Final = (
     Column("content_match_count", "Matches"),
     Column("file.commit.hash", "Commit"),
 )
+
+SNIPPETS: Final = (
+    Column("id", "ID"),
+    Column("title", "Title"),
+    Column("is_private", "Private"),
+    Column("owner.display_name", "Owner"),
+    Column("updated_on", "Updated"),
+)
+
+SNIPPET: Final = (*SNIPPETS, Column("scm", "SCM"), Column("created_on", "Created"))

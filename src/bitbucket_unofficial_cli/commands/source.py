@@ -15,6 +15,7 @@ from bitbucket_unofficial_cli.runtime.exit_codes import ExitCode
 from bitbucket_unofficial_cli.runtime.params import PagingOptions
 from bitbucket_unofficial_cli.runtime.params import Repo
 from bitbucket_unofficial_cli.runtime.params import options_from
+from bitbucket_unofficial_cli.services.files import read_local_files
 from bitbucket_unofficial_cli.services.listing import paged
 
 APP: Final = typer.Typer(help="Browse and commit repository source.", no_args_is_help=True)
@@ -112,14 +113,7 @@ def history(ctx: typer.Context, options: _HistoryOptions) -> None:
 @options_from(_CommitOptions)
 def commit(ctx: typer.Context, options: _CommitOptions) -> None:
     app_context = get_app_context(ctx)
-    files: dict[str, bytes] = {}
-    for spec in options.files:
-        local, _, remote = spec.partition(":")
-        try:
-            files[remote or local] = Path(local).read_bytes()
-        except OSError as error:
-            message = f"Cannot read {local}: {error}"
-            raise CliError(message, exit_code=ExitCode.USAGE) from error
+    files = read_local_files(options.files)
     source = app_context.repository(options.repo).source
     source.create_commit(files, message=options.message, branch=options.branch, author=options.author)
     app_context.notify(f"Committed {len(files)} file(s).")

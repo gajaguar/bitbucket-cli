@@ -22,33 +22,33 @@ Every capability of `bitbucket-unofficial-sdk` 1.0.1, grouped by SDK resource.
 
 ## Account and workspace
 
-| SDK                                                               | CLI command                                | Release | Status  |
-| ----------------------------------------------------------------- | ------------------------------------------ | ------- | ------- |
-| `client.user.me()`                                                | `bitbucket user me`                        | 0.1.0   | done    |
-| `client.user.workspaces()`                                        | `bitbucket workspace list`                 | 0.1.0   | done    |
-| `ws.get()`                                                        | `bitbucket workspace get`                  | 0.1.0   | done    |
-| `ws.members` list, get                                            | `bitbucket member list`, `get`             | 0.2.0   | planned |
-| `ws.my_permission()`, `ws.my_repository_permissions()`            | `bitbucket permission mine`                | 0.2.0   | planned |
-| `ws.permissions` list, repositories, repository                   | `bitbucket permission list`                | 0.2.0   | planned |
-| `ws.gpg_public_key()`                                             | `bitbucket workspace gpg-key`              | 0.2.0   | planned |
-| `ws.pull_requests_by_author()`                                    | `bitbucket pr by-author`                   | 0.3.0   | done    |
-| `client.user.emails()`, `email()`                                 | `bitbucket user email list`, `get`         | 0.8.0   | done    |
-| `client.users(id).get()`                                          | `bitbucket user get`                       | 0.8.0   | done    |
-| `client.users(id).ssh_keys` CRUD, `gpg_keys`                      | `bitbucket user ssh-key`, `gpg-key`        | 0.8.0   | done    |
-| `client.users(id).pipelines_config.variables`, `client.teams(id)` | `bitbucket user variable`, `team variable` | 0.8.0   | done    |
-| `ws.search.code()`                                                | `bitbucket search code`                    | 0.8.0   | done    |
+| SDK                                                               | CLI command                                | Release | Status |
+| ----------------------------------------------------------------- | ------------------------------------------ | ------- | ------ |
+| `client.user.me()`                                                | `bitbucket user me`                        | 0.1.0   | done   |
+| `client.user.workspaces()`                                        | `bitbucket workspace list`                 | 0.1.0   | done   |
+| `ws.get()`                                                        | `bitbucket workspace get`                  | 0.1.0   | done   |
+| `ws.members` list, get                                            | `bitbucket member list`, `get`             | 0.2.0   | done   |
+| `ws.my_permission()`, `ws.my_repository_permissions()`            | `bitbucket permission mine`                | 0.2.0   | done   |
+| `ws.permissions` list, repositories, repository                   | `bitbucket permission list`                | 0.2.0   | done   |
+| `ws.gpg_public_key()`                                             | `bitbucket workspace gpg-key`              | 0.2.0   | done   |
+| `ws.pull_requests_by_author()`                                    | `bitbucket pr by-author`                   | 0.3.0   | done   |
+| `client.user.emails()`, `email()`                                 | `bitbucket user email list`, `get`         | 0.8.0   | done   |
+| `client.users(id).get()`                                          | `bitbucket user get`                       | 0.8.0   | done   |
+| `client.users(id).ssh_keys` CRUD, `gpg_keys`                      | `bitbucket user ssh-key`, `gpg-key`        | 0.8.0   | done   |
+| `client.users(id).pipelines_config.variables`, `client.teams(id)` | `bitbucket user variable`, `team variable` | 0.8.0   | done   |
+| `ws.search.code()`                                                | `bitbucket search code`                    | 0.8.0   | done   |
 
 ## Repositories and projects
 
-| SDK                                                                          | CLI command                                                                                         | Release | Status  |
-| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------- | ------- |
-| `ws.repositories.list()`, `get()`                                            | `bitbucket repo list`, `get`                                                                        | 0.1.0   | done    |
-| `ws.repositories.create()`, `update()`, `delete()`                           | `bitbucket repo create`, `update`, `delete`                                                         | 0.2.0   | planned |
-| `ws.repositories.create_fork()`, `forks()`, `watchers()`                     | `bitbucket repo fork`, `forks`, `watchers`                                                          | 0.2.0   | planned |
-| `ws.repositories.hooks()` CRUD, `client.hook_events`                         | `bitbucket webhook`, `hook-event types`, `list`                                                     | 0.2.0   | planned |
-| `ws.repositories.commit_pull_requests()`, `pull_request_activity()`          | `bitbucket commit prs`, `pr activity`                                                               | 0.3.0   | done    |
-| `ws.projects` CRUD                                                           | `bitbucket project`                                                                                 | 0.2.0   | planned |
-| `project.default_reviewers`, `branching_model`, `permissions`, `deploy_keys` | `bitbucket default-reviewer`, `branching-model`, `permission-config`, `deploy-key` with `--project` | 0.5.0   | done    |
+| SDK                                                                          | CLI command                                                                                         | Release | Status |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------- | ------ |
+| `ws.repositories.list()`, `get()`                                            | `bitbucket repo list`, `get`                                                                        | 0.1.0   | done   |
+| `ws.repositories.create()`, `update()`, `delete()`                           | `bitbucket repo create`, `update`, `delete`                                                         | 0.2.0   | done   |
+| `ws.repositories.create_fork()`, `forks()`, `watchers()`                     | `bitbucket repo fork`, `forks`, `watchers`                                                          | 0.2.0   | done   |
+| `ws.repositories.hooks()` CRUD, `client.hook_events`                         | `bitbucket webhook`, `hook-event types`, `list`                                                     | 0.2.0   | done   |
+| `ws.repositories.commit_pull_requests()`, `pull_request_activity()`          | `bitbucket commit prs`, `pr activity`                                                               | 0.3.0   | done   |
+| `ws.projects` CRUD                                                           | `bitbucket project`                                                                                 | 0.2.0   | done   |
+| `project.default_reviewers`, `branching_model`, `permissions`, `deploy_keys` | `bitbucket default-reviewer`, `branching-model`, `permission-config`, `deploy-key` with `--project` | 0.5.0   | done   |
 
 ## Pull requests
 
@@ -99,8 +99,8 @@ Every capability of `bitbucket-unofficial-sdk` 1.0.1, grouped by SDK resource.
 
 ## Snippets
 
-| SDK                                                                       | CLI command                              | Release | Status  |
-| ------------------------------------------------------------------------- | ---------------------------------------- | ------- | ------- |
-| `ws.snippets` create, get, list, update, delete; `client.snippets.create` | `bitbucket snippet`                      | 0.9.0   | planned |
-| `snippet.comments` CRUD, `commits`, `diff`, `patch`, `file`, `revision`   | `bitbucket snippet comment`, `diff`, ... | 0.9.0   | planned |
-| `snippet.watch`, `unwatch`, `is_watching`, `watchers`                     | `bitbucket snippet watch`                | 0.9.0   | planned |
+| SDK                                                                       | CLI command                                                                 | Release | Status |
+| ------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------- | ------ |
+| `ws.snippets` create, get, list, update, delete; `client.snippets.create` | `bitbucket snippet`                                                         | 0.9.0   | done   |
+| `snippet.comments` CRUD, `commits`, `diff`, `patch`, `file`, `revision`   | `bitbucket snippet comment`, `commits`, `diff`, `patch`, `file`, `revision` | 0.9.0   | done   |
+| `snippet.watch`, `unwatch`, `is_watching`, `watchers`                     | `bitbucket snippet watch`, `unwatch`, `is-watching`, `watchers`             | 0.9.0   | done   |
