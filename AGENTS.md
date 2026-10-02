@@ -94,3 +94,27 @@ Once a pull request is open, the agent MUST:
   bump, and create the GitHub Release from the `vX.Y.Z` tag only on request.
 - Approve the `pypi` environment's deployment only on request; follow
   [`docs/release/pypi-trusted-publishing.md`](docs/release/pypi-trusted-publishing.md).
+
+## CLI
+
+- Reach Bitbucket only through `bitbucket-unofficial-sdk`, never with `httpx`
+  or a hand-built URL. The one exception is `auth/oauth.py`, which exchanges
+  OAuth tokens because the SDK leaves that to the application. A missing
+  capability goes into the SDK first; then raise the SDK floor in
+  `pyproject.toml`.
+- Keep layering pointing downward: `commands` call `services`, `runtime`,
+  `output` and the SDK; nothing imports from `commands`.
+- Declare each command module with `APP: Final = typer.Typer(...)`, decorate a
+  command with `@APP.command(...)` then `@handle_errors`, and declare options
+  inline with `Annotated`. Six or more options go in a frozen dataclass with
+  `@options_from`; see
+  [`docs/python/typer-parameter-objects.md`](docs/python/typer-parameter-objects.md).
+- Render data only through `AppContext.render`; send messages through
+  `AppContext.notify` and failures through `CliError`.
+- Reuse the `ExitCode` values and add a new one without renumbering, because
+  scripts depend on them.
+- Never accept a secret as an argument and never print one, except
+  `auth token`.
+- Update [`docs/coverage.md`](docs/coverage.md) in the same change that adds or
+  changes a command, and the release table in
+  [`docs/roadmap.md`](docs/roadmap.md) when a release's scope moves.

@@ -3,16 +3,38 @@ requires = ["hatchling>=1.27"]
 build-backend = "hatchling.build"
 
 [project]
-name = "bitbucket-cli"
+name = "bitbucket-unofficial-cli"
 version = "0.1.0"
 description = "Unofficial command-line interface for Bitbucket Cloud built on bitbucket-unofficial-sdk"
 readme = "README.md"
 authors = [{ name = "G.A.JAGUAR", email = "dev@gajaguar.com" }]
 license = "MIT"
 requires-python = ">=3.14"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.14",
+  "Typing :: Typed",
+]
+dependencies = [
+  "bitbucket-unofficial-sdk>=1.0.1,<2",
+  "httpx>=0.28",
+  "keyring>=25.0",
+  "platformdirs>=4.0",
+  "pydantic>=2.11",
+  "rich>=14.0",
+  "tomli-w>=1.0",
+  "typer>=0.16",
+]
+
+[project.urls]
+Homepage = "https://github.com/gajaguar/bitbucket-cli"
+Repository = "https://github.com/gajaguar/bitbucket-cli"
+Issues = "https://github.com/gajaguar/bitbucket-cli/issues"
 
 [project.scripts]
-bitbucket-cli = "bitbucket_unofficial_cli.main:main"
+bitbucket = "bitbucket_unofficial_cli.main:run"
 
 [dependency-groups]
 dev = [
@@ -23,21 +45,28 @@ dev = [
   "pyright>=1.1.414",
   "pytest-cov>=7.1",
   "pytest>=9.1",
+  "respx>=0.22",
   "ruff>=0.16.8",
 ]
 
 [tool.pytest.ini_options]
-addopts = "--cov=src --cov-report=term-missing"
+addopts = "--cov=src --cov-report=term-missing --cov-fail-under=90 -m 'not live'"
+markers = [
+  "live: hits the real Bitbucket API (requires ATLASSIAN_USER_EMAIL, ATLASSIAN_API_TOKEN and BITBUCKET_WORKSPACE)",
+]
 
 [tool.coverage.report]
-exclude_also = ["if __name__ == .__main__.:"]
+exclude_also = ["if __name__ == .__main__.:", "if TYPE_CHECKING:"]
 
 [tool.ruff]
 line-length = 119
 lint.select = ["ALL"]
 lint.ignore = ["CPY", "D", "missing-trailing-comma"]
 lint.isort.force-single-line = true
-lint.per-file-ignores."tests/**/*.py" = ["assert"]
+lint.isort.case-sensitive = true
+# Typer resolves command signatures at runtime, so their annotation imports must stay real imports.
+lint.per-file-ignores."src/bitbucket_unofficial_cli/commands/**/*.py" = ["typing-only-standard-library-import", "typing-only-third-party-import"]
+lint.per-file-ignores."tests/**/*.py" = ["ARG", "boolean-type-hint-positional-argument", "magic-value-comparison", "assert", "hardcoded-password-string", "hardcoded-password-func-arg", "hardcoded-password-default"]
 
 [tool.mypy]
 strict = true

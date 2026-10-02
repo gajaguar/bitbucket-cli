@@ -10,10 +10,21 @@ out under this directory.
 
 ## Reference
 
-* [Conventions](conventions/index.md) - commit and branch naming, and how
-  they're enforced.
+* [Architecture](architecture/index.md) - the layers, the output formats and
+  the exit codes.
+* [Authentication](auth/index.md) - the credential kinds and how to set up an
+  OAuth consumer.
+* [Conventions](conventions/index.md) - commit and branch naming, how they're
+  enforced, and versioning.
 * [Toolchain](toolchain/index.md) - which layer (mise or an ecosystem
   package manager) installs which tool, and why.
+
+## Project
+
+* [Roadmap](roadmap.md) - the releases from 0.1.0 to 1.0.0 and what 1.0.0
+  freezes.
+* [SDK coverage](coverage.md) - each SDK capability, its command, release and
+  status.
 
 See [`log.md`](log.md) for the bundle's change history.
 
