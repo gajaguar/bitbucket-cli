@@ -28,6 +28,10 @@
 * **Addition**: [`architecture/command-conventions.md`](architecture/command-conventions.md)
   for `--yes`, `--from-file`, `--repo` and raw text output.
 * **Change**: [`coverage.md`](coverage.md) marks the 0.2.0 rows `done`.
+* **Change**: the `AGENTS.md` versioning section links to
+  `conventions/versioning.md` instead of restating it.
+* **Change**: `conventions/tag-vocabulary.md` states the tag form: lowercase, one
+  word by default, no parent prefix.
 
 ## 2026-10-01
 
