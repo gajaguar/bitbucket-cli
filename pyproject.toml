@@ -18,7 +18,7 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = [
-  "bitbucket-unofficial-sdk>=1.0.1,<2",
+  "bitbucket-unofficial-sdk>=1.0.2,<2",
   "httpx>=0.28",
   "keyring>=25.0",
   "platformdirs>=4.0",

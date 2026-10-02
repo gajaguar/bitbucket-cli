@@ -17,6 +17,7 @@ from bitbucket.errors import RateLimitError
 from bitbucket.errors import ServerError
 from bitbucket.errors import TransportError
 from bitbucket.errors import ValidationError
+from pydantic import ValidationError as ModelValidationError
 from rich.console import Console
 from rich.markup import escape
 
@@ -54,6 +55,13 @@ _SDK_HINTS: Final[dict[ExitCode, str]] = {
 }
 
 
+_UNREADABLE_RESPONSE: Final = "Bitbucket returned a response the SDK could not read."
+_UNREADABLE_RESPONSE_HINT: Final = (
+    "Upgrade bitbucket-unofficial-cli; if the error persists, report it at "
+    "https://github.com/gajaguar/bitbucket-sdk/issues."
+)
+
+
 def exit_code_for(error: BitbucketError) -> ExitCode:
     for error_type, exit_code in _SDK_EXIT_CODES:
         if isinstance(error, error_type):
@@ -87,5 +95,8 @@ def handle_errors[**P, R](func: Callable[P, R]) -> Callable[P, R]:
             exit_code = exit_code_for(error)
             report(describe(error), _SDK_HINTS.get(exit_code))
             raise typer.Exit(exit_code) from error
+        except ModelValidationError as error:
+            report(_UNREADABLE_RESPONSE, _UNREADABLE_RESPONSE_HINT)
+            raise typer.Exit(ExitCode.FAILURE) from error
 
     return wrapper

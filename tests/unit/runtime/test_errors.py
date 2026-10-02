@@ -16,6 +16,8 @@ from bitbucket.errors import RateLimitError
 from bitbucket.errors import ServerError
 from bitbucket.errors import TransportError
 from bitbucket.errors import ValidationError
+from pydantic import BaseModel
+from pydantic import ValidationError as ModelValidationError
 
 from bitbucket_unofficial_cli.runtime.errors import CliError
 from bitbucket_unofficial_cli.runtime.errors import describe
@@ -105,3 +107,25 @@ def test_handle_errors_turns_failures_into_exit_codes(capsys: pytest.CaptureFixt
     assert "bad [input]" in err
     assert "try again" in err
     assert "auth login" in err
+
+
+class _Strict(BaseModel):
+    value: int
+
+
+@handle_errors
+def fail_model() -> None:
+    _Strict.model_validate({"value": "not a number"})
+
+
+def test_handle_errors_reports_an_unreadable_response_without_a_traceback(capsys: pytest.CaptureFixture[str]) -> None:
+    # Arrange
+    # Act
+    with pytest.raises(typer.Exit) as model_exit:
+        fail_model()
+    # Assert
+    assert model_exit.value.exit_code == ExitCode.FAILURE
+    assert isinstance(model_exit.value.__cause__, ModelValidationError)
+    err = capsys.readouterr().err
+    assert "could not read" in err
+    assert "Traceback" not in err
