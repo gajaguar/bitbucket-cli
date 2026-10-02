@@ -14,6 +14,10 @@ any tag, and a note may carry one the table does not list, which
 `make docs-retag` never touches. A tag in the table is one `make docs-retag`
 asks about, so add a row for each new tag worth assigning that way.
 
+A tag is lowercase and one word. Join words with a hyphen only when the
+concept's own name has several words (a product, a tool or an established
+term), and do not prefix a subtopic with its parent: `hooks`, not `git-hooks`.
+
 | Tag             | A note carries it when it…                                 | A note does not when it…                                       |
 | :-------------- | :--------------------------------------------------------- | :------------------------------------------------------------- |
 | `documentation` | is about how to write, structure or validate documentation | is about the product or the code rather than its documentation |

@@ -48,12 +48,9 @@ Once a pull request is open, the agent MUST:
 
 ## Versioning and releases
 
-- Bump the version with each change, as
-  [`docs/conventions/versioning.md`](docs/conventions/versioning.md) defines,
-  in its own `chore(release)` commit within the same pull request.
-- Tag only a minor or major bump, after its pull request merges. Tag a patch
-  only when asked to publish it.
-- Suggest a GitHub Release after tagging; create one only when asked.
+- Decide every version bump, tag and release as
+  [`docs/conventions/versioning.md`](docs/conventions/versioning.md) defines;
+  it is the only place those rules live.
 
 ## Documentation
 
