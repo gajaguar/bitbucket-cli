@@ -40,15 +40,15 @@ Every capability of `bitbucket-unofficial-sdk` 1.0.1, grouped by SDK resource.
 
 ## Repositories and projects
 
-| SDK                                                                          | CLI command                                     | Release | Status  |
-| ---------------------------------------------------------------------------- | ----------------------------------------------- | ------- | ------- |
-| `ws.repositories.list()`, `get()`                                            | `bitbucket repo list`, `get`                    | 0.1.0   | done    |
-| `ws.repositories.create()`, `update()`, `delete()`                           | `bitbucket repo create`, `update`, `delete`     | 0.2.0   | planned |
-| `ws.repositories.create_fork()`, `forks()`, `watchers()`                     | `bitbucket repo fork`, `forks`, `watchers`      | 0.2.0   | planned |
-| `ws.repositories.hooks()` CRUD, `client.hook_events`                         | `bitbucket webhook`, `hook-event types`, `list` | 0.2.0   | planned |
-| `ws.repositories.commit_pull_requests()`, `pull_request_activity()`          | `bitbucket commit prs`, `pr activity`           | 0.3.0   | done    |
-| `ws.projects` CRUD                                                           | `bitbucket project`                             | 0.2.0   | planned |
-| `project.default_reviewers`, `branching_model`, `permissions`, `deploy_keys` | `bitbucket project ...`                         | 0.5.0   | planned |
+| SDK                                                                          | CLI command                                                                                         | Release | Status  |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------- | ------- |
+| `ws.repositories.list()`, `get()`                                            | `bitbucket repo list`, `get`                                                                        | 0.1.0   | done    |
+| `ws.repositories.create()`, `update()`, `delete()`                           | `bitbucket repo create`, `update`, `delete`                                                         | 0.2.0   | planned |
+| `ws.repositories.create_fork()`, `forks()`, `watchers()`                     | `bitbucket repo fork`, `forks`, `watchers`                                                          | 0.2.0   | planned |
+| `ws.repositories.hooks()` CRUD, `client.hook_events`                         | `bitbucket webhook`, `hook-event types`, `list`                                                     | 0.2.0   | planned |
+| `ws.repositories.commit_pull_requests()`, `pull_request_activity()`          | `bitbucket commit prs`, `pr activity`                                                               | 0.3.0   | done    |
+| `ws.projects` CRUD                                                           | `bitbucket project`                                                                                 | 0.2.0   | planned |
+| `project.default_reviewers`, `branching_model`, `permissions`, `deploy_keys` | `bitbucket default-reviewer`, `branching-model`, `permission-config`, `deploy-key` with `--project` | 0.5.0   | done    |
 
 ## Pull requests
 
@@ -76,14 +76,14 @@ Every capability of `bitbucket-unofficial-sdk` 1.0.1, grouped by SDK resource.
 
 ## Repository settings
 
-| SDK                                                              | CLI command                    | Release | Status  |
-| ---------------------------------------------------------------- | ------------------------------ | ------- | ------- |
-| `repo.branch_restrictions` CRUD                                  | `bitbucket branch-restriction` | 0.5.0   | planned |
-| `repo.branching_model` get, settings, update_settings, effective | `bitbucket branching-model`    | 0.5.0   | planned |
-| `repo.default_reviewers` list, get, add, remove, effective       | `bitbucket default-reviewer`   | 0.5.0   | planned |
-| `repo.deploy_keys` CRUD                                          | `bitbucket deploy-key`         | 0.5.0   | planned |
-| `repo.permissions` groups, users, override settings              | `bitbucket repo permission`    | 0.5.0   | planned |
-| `repo.properties` get, put, delete                               | `bitbucket repo property`      | 0.5.0   | planned |
+| SDK                                                              | CLI command                    | Release | Status |
+| ---------------------------------------------------------------- | ------------------------------ | ------- | ------ |
+| `repo.branch_restrictions` CRUD                                  | `bitbucket branch-restriction` | 0.5.0   | done   |
+| `repo.branching_model` get, settings, update_settings, effective | `bitbucket branching-model`    | 0.5.0   | done   |
+| `repo.default_reviewers` list, get, add, remove, effective       | `bitbucket default-reviewer`   | 0.5.0   | done   |
+| `repo.deploy_keys` CRUD                                          | `bitbucket deploy-key`         | 0.5.0   | done   |
+| `repo.permissions` groups, users, override settings              | `bitbucket permission-config`  | 0.5.0   | done   |
+| `repo.properties` get, put, delete                               | `bitbucket repo property`      | 0.5.0   | done   |
 
 ## Pipelines, environments and deployments
 
