@@ -8,6 +8,7 @@ from bitbucket.models.repository import ForkCreate
 from bitbucket.models.repository import RepositoryCreate
 from bitbucket.models.repository import RepositoryUpdate
 
+from bitbucket_unofficial_cli.commands import repo_property
 from bitbucket_unofficial_cli.output.columns import ACCOUNTS
 from bitbucket_unofficial_cli.output.columns import REPOSITORIES
 from bitbucket_unofficial_cli.output.columns import REPOSITORY
@@ -24,6 +25,7 @@ from bitbucket_unofficial_cli.services.listing import paged
 from bitbucket_unofficial_cli.services.payloads import build
 
 APP: Final = typer.Typer(help="Manage repositories in the selected workspace.", no_args_is_help=True)
+APP.add_typer(repo_property.APP, name="property")
 
 Slug = Annotated[str, typer.Argument(help="Repository slug.")]  # pylint: disable=gajaguar-module-const-naming,gajaguar-require-final
 

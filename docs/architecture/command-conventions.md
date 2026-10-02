@@ -16,6 +16,11 @@ A command that works inside one repository takes `--repo` (`-r`), which reads
 their subject. `webhook` takes `--repo` as optional: without it the command
 acts on the workspace.
 
+Settings that exist on a repository and on a project (`branching-model`,
+`default-reviewer`, `deploy-key`, `permission-config`) take `--repo` or
+`--project`. An explicit `--repo` together with `--project` is a usage error;
+a `BITBUCKET_REPOSITORY` from the environment gives way to `--project`.
+
 ## Deleting
 
 A command that deletes or removes something asks first. `--yes` (`-y`) skips

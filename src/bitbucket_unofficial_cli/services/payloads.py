@@ -11,6 +11,8 @@ from bitbucket_unofficial_cli.runtime.errors import CliError
 from bitbucket_unofficial_cli.runtime.exit_codes import ExitCode
 
 if TYPE_CHECKING:
+    from enum import StrEnum
+
     from bitbucket.models.base import BitbucketModel
 
 
@@ -41,6 +43,14 @@ def build[T: BitbucketModel](model: type[T], source: str | None = None, /, **fie
         raise CliError(message, exit_code=ExitCode.USAGE) from error
 
 
+def check_choice(value: str | None, values: type[StrEnum], option: str) -> str | None:
+    allowed = [member.value for member in values if member.value.lower() != "unknown"]
+    if value is not None and value not in allowed:
+        message = f"Invalid value {value!r} for {option}; expected one of: {', '.join(allowed)}."
+        raise CliError(message, exit_code=ExitCode.USAGE)
+    return value
+
+
 # For bulk uploads: --from-file holds a JSON array of bodies.
 def build_many[T: BitbucketModel](model: type[T], source: str) -> list[T]:
     loaded = _read(source)
@@ -54,4 +64,4 @@ def build_many[T: BitbucketModel](model: type[T], source: str) -> list[T]:
         raise CliError(message, exit_code=ExitCode.USAGE) from error
 
 
-__all__ = ["build", "build_many"]
+__all__ = ["build", "build_many", "check_choice"]

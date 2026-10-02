@@ -25,7 +25,9 @@ from bitbucket_unofficial_cli.services.payloads import build
 if TYPE_CHECKING:
     from bitbucket.resources.hooks import HooksResource
 
-APP: Final = typer.Typer(help="Manage webhooks of a repository, or of the workspace.", no_args_is_help=True)
+APP: Final = typer.Typer(
+    help="Manage webhooks of a repository (--repo), or of the workspace without it.", no_args_is_help=True
+)
 
 Uuid = Annotated[str, typer.Argument(help="Webhook UUID.")]  # pylint: disable=gajaguar-module-const-naming,gajaguar-require-final
 

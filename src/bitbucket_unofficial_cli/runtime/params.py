@@ -11,6 +11,7 @@ import typer
 
 if TYPE_CHECKING:
     from collections.abc import Callable
+    from enum import StrEnum
 
 
 def _parameter(field: dataclasses.Field[object], annotation: object) -> inspect.Parameter:
@@ -74,6 +75,20 @@ FromFile = Annotated[  # pylint: disable=gajaguar-module-const-naming,gajaguar-r
 ]
 OptionalRepo = Annotated[  # pylint: disable=gajaguar-module-const-naming,gajaguar-require-final
     str | None,
-    typer.Option("--repo", "-r", envvar="BITBUCKET_REPOSITORY", help="Repository slug; omit for the workspace."),
+    typer.Option("--repo", "-r", envvar="BITBUCKET_REPOSITORY", help="Repository slug."),
 ]
 PullRequestId = Annotated[int, typer.Argument(help="Pull request ID.")]  # pylint: disable=gajaguar-module-const-naming,gajaguar-require-final
+ProjectScope = Annotated[  # pylint: disable=gajaguar-module-const-naming,gajaguar-require-final
+    str | None,
+    typer.Option("--project", help="Project key, for project-level settings instead of --repo."),
+]
+
+
+# The SDK enums carry an UNKNOWN member for forward compatibility, which a person cannot ask for, and
+# they turn a typo into UNKNOWN silently. Options typed as str are checked against the real values.
+def values_of(values: type[StrEnum]) -> list[str]:
+    return [member.value for member in values if member.value.lower() != "unknown"]
+
+
+def one_of(values: type[StrEnum]) -> str:
+    return "One of: " + ", ".join(values_of(values)) + "."

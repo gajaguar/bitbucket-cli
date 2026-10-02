@@ -268,3 +268,66 @@ DOWNLOADS: Final = (
     Column("user.display_name", "Uploaded by"),
     Column("created_on", "Created"),
 )
+
+BRANCH_RESTRICTIONS: Final = (
+    Column("id", "ID"),
+    Column("kind", "Kind"),
+    Column("branch_match_kind", "Match"),
+    Column("pattern", "Pattern"),
+    Column("branch_type", "Branch type"),
+    Column("value", "Value"),
+)
+
+BRANCHING_MODEL: Final = (
+    Column("development.name", "Development"),
+    Column("development.use_mainbranch", "Uses main"),
+    Column("production.name", "Production"),
+    Column("production.use_mainbranch", "Uses main"),
+)
+
+BRANCHING_SETTINGS: Final = (
+    Column("development.name", "Development"),
+    Column("development.enabled", "Enabled"),
+    Column("production.name", "Production"),
+    Column("production.enabled", "Enabled"),
+)
+
+DEFAULT_REVIEWERS: Final = (
+    Column("display_name", "Name"),
+    Column("nickname", "Nickname"),
+    Column("account_id", "Account ID"),
+    Column("reviewer_type", "Type"),
+)
+
+PROJECT_DEFAULT_REVIEWERS: Final = (
+    Column("user.display_name", "Name"),
+    Column("user.nickname", "Nickname"),
+    Column("user.account_id", "Account ID"),
+    Column("reviewer_type", "Type"),
+)
+
+DEPLOY_KEYS: Final = (
+    Column("id", "ID"),
+    Column("label", "Label"),
+    Column("key", "Key"),
+    Column("created_on", "Created"),
+    Column("last_used", "Last used"),
+)
+
+GROUP_PERMISSIONS: Final = (
+    Column("group.slug", "Group"),
+    Column("group.name", "Name"),
+    Column("permission", "Permission"),
+)
+
+USER_PERMISSIONS: Final = (
+    Column("user.display_name", "Name"),
+    Column("user.account_id", "Account ID"),
+    Column("permission", "Permission"),
+)
+
+OVERRIDE_SETTINGS: Final = (
+    Column("override_settings.branching_model", "Branching model"),
+    Column("override_settings.branch_restrictions", "Branch restrictions"),
+    Column("override_settings.default_merge_strategy", "Merge strategy"),
+)

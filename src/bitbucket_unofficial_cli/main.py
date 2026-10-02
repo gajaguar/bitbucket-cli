@@ -18,12 +18,17 @@ from bitbucket_unofficial_cli.auth.resolver import CredentialStores
 from bitbucket_unofficial_cli.commands import annotation
 from bitbucket_unofficial_cli.commands import auth
 from bitbucket_unofficial_cli.commands import branch
+from bitbucket_unofficial_cli.commands import branch_restriction
+from bitbucket_unofficial_cli.commands import branching_model
 from bitbucket_unofficial_cli.commands import commit
 from bitbucket_unofficial_cli.commands import config
+from bitbucket_unofficial_cli.commands import default_reviewer
+from bitbucket_unofficial_cli.commands import deploy_key
 from bitbucket_unofficial_cli.commands import download
 from bitbucket_unofficial_cli.commands import hook_event
 from bitbucket_unofficial_cli.commands import member
 from bitbucket_unofficial_cli.commands import permission
+from bitbucket_unofficial_cli.commands import permission_config
 from bitbucket_unofficial_cli.commands import pr
 from bitbucket_unofficial_cli.commands import project
 from bitbucket_unofficial_cli.commands import ref
@@ -139,6 +144,11 @@ def create_app(services_factory: Callable[[], Services] = default_services) -> t
     cli.add_typer(report.APP, name="report")
     cli.add_typer(annotation.APP, name="annotation")
     cli.add_typer(download.APP, name="download")
+    cli.add_typer(branch_restriction.APP, name="branch-restriction")
+    cli.add_typer(branching_model.APP, name="branching-model")
+    cli.add_typer(default_reviewer.APP, name="default-reviewer")
+    cli.add_typer(deploy_key.APP, name="deploy-key")
+    cli.add_typer(permission_config.APP, name="permission-config")
     cli.add_typer(member.APP, name="member")
     cli.add_typer(permission.APP, name="permission")
     cli.add_typer(webhook.APP, name="webhook")
