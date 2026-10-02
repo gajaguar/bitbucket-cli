@@ -35,6 +35,9 @@ Before `1.0.0` the contract is not frozen, so a breaking change bumps minor.
   `git tag -a vX.Y.Z -m "vX.Y.Z" && git push origin vX.Y.Z`.
 - A patch bump gets no tag. It is tagged only when someone asks to publish
   that patch.
+- Where the `Makefile` defines `make release-tag`, use it: it tags the base
+  branch as `v<project.version>` and pushes the tag, after checking that the
+  branch is clean and at its remote.
 
 ## Releases
 
