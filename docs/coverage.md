@@ -87,15 +87,15 @@ Every capability of `bitbucket-unofficial-sdk` 1.0.1, grouped by SDK resource.
 
 ## Pipelines, environments and deployments
 
-| SDK                                                                          | CLI command                                              | Release | Status  |
-| ---------------------------------------------------------------------------- | -------------------------------------------------------- | ------- | ------- |
-| `repo.pipelines` create, get, list, stop, steps, step                        | `bitbucket pipeline run`, `get`, `list`, `stop`, `steps` | 0.6.0   | planned |
-| `repo.pipelines` step_log, container_log, test_reports, test_cases           | `bitbucket pipeline log`, `tests`                        | 0.6.0   | planned |
-| `repo.pipelines_config` get, update, update_build_number                     | `bitbucket pipeline config`                              | 0.6.0   | planned |
-| `variables`, `schedules`, `known_hosts`, `ssh_key_pair`, `caches`, `runners` | `bitbucket pipeline variable`, `schedule`, ...           | 0.6.0   | planned |
-| `ws.pipelines_config` variables, runners, OIDC configuration and keys        | `bitbucket workspace pipeline ...`                       | 0.6.0   | planned |
-| `repo.environments` CRUD, `variables(env)`                                   | `bitbucket environment`                                  | 0.7.0   | planned |
-| `repo.deployments` get, list                                                 | `bitbucket deployment`                                   | 0.7.0   | planned |
+| SDK                                                                          | CLI command                                                                                           | Release | Status  |
+| ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------- | ------- |
+| `repo.pipelines` create, get, list, stop, steps, step                        | `bitbucket pipeline run`, `get`, `list`, `stop`, `steps`, `step`                                      | 0.6.0   | done    |
+| `repo.pipelines` step_log, container_log, test_reports, test_cases           | `bitbucket pipeline log`, `tests`, `test-cases`, `test-case-reasons`                                  | 0.6.0   | done    |
+| `repo.pipelines_config` get, update, update_build_number                     | `bitbucket pipeline config`                                                                           | 0.6.0   | done    |
+| `variables`, `schedules`, `known_hosts`, `ssh_key_pair`, `caches`, `runners` | `bitbucket pipeline variable`, `schedule`, `known-host`, `ssh-key`, `cache`, `runner`                 | 0.6.0   | done    |
+| `ws.pipelines_config` variables, runners, OIDC configuration and keys        | `bitbucket pipeline variable`, `runner` without `--repo`; `workspace oidc-configuration`, `oidc-keys` | 0.6.0   | done    |
+| `repo.environments` CRUD, `variables(env)`                                   | `bitbucket environment`                                                                               | 0.7.0   | planned |
+| `repo.deployments` get, list                                                 | `bitbucket deployment`                                                                                | 0.7.0   | planned |
 
 ## Snippets
 

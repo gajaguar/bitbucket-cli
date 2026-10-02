@@ -1,3 +1,4 @@
+import json
 from dataclasses import dataclass
 from typing import Annotated
 from typing import Final
@@ -77,3 +78,17 @@ def use(ctx: typer.Context, slug: Annotated[str, typer.Argument(help="Workspace 
 def gpg_key(ctx: typer.Context) -> None:
     app_context = get_app_context(ctx)
     app_context.write(app_context.workspace().gpg_public_key())
+
+
+@APP.command(name="oidc-configuration", help="Print the workspace's OpenID Connect configuration as JSON.")
+@handle_errors
+def oidc_configuration(ctx: typer.Context) -> None:
+    app_context = get_app_context(ctx)
+    app_context.write(json.dumps(app_context.workspace().pipelines_config.oidc_configuration(), indent=2))
+
+
+@APP.command(name="oidc-keys", help="Print the workspace's OpenID Connect signing keys as JSON.")
+@handle_errors
+def oidc_keys(ctx: typer.Context) -> None:
+    app_context = get_app_context(ctx)
+    app_context.write(json.dumps(app_context.workspace().pipelines_config.oidc_keys(), indent=2))
