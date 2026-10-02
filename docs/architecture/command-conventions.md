@@ -38,3 +38,13 @@ fields named by a flag or the file are sent.
 
 A diff, a patch, a log or a key is not a dataset. It is written to stdout
 as it is, whatever `--output` says, and ends with a newline.
+
+## Secrets
+
+A secret is never an argument and is never printed. A variable value comes
+from a hidden prompt on a terminal, or from stdin with `--stdin`. A private
+key comes from `--private-key-file` or stdin. A pipeline run takes variables
+from the environment with `--variable-env NAME`. The SDK masks every secret
+field it returns, and the output keeps the mask. The OAuth credentials Bitbucket
+returns when it registers a runner are masked too, so a runner that needs them
+is registered in the Bitbucket UI.

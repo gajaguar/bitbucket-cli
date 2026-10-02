@@ -331,3 +331,78 @@ OVERRIDE_SETTINGS: Final = (
     Column("override_settings.branch_restrictions", "Branch restrictions"),
     Column("override_settings.default_merge_strategy", "Merge strategy"),
 )
+
+PIPELINES: Final = (
+    Column("build_number", "#"),
+    Column("uuid", "UUID"),
+    Column("state.name", "State"),
+    Column("state.result.name", "Result"),
+    Column("target.ref_name", "Ref"),
+    Column("creator.display_name", "Creator"),
+    Column("created_on", "Created"),
+    Column("build_seconds_used", "Seconds"),
+)
+
+PIPELINE_STEPS: Final = (
+    Column("uuid", "UUID"),
+    Column("state.name", "State"),
+    Column("state.result.name", "Result"),
+    Column("image.name", "Image"),
+    Column("started_on", "Started"),
+    Column("completed_on", "Completed"),
+)
+
+PIPELINE_VARIABLES: Final = (
+    Column("uuid", "UUID"),
+    Column("key", "Key"),
+    Column("value", "Value"),
+    Column("secured", "Secured"),
+)
+
+SCHEDULES: Final = (
+    Column("uuid", "UUID"),
+    Column("enabled", "Enabled"),
+    Column("cron_pattern", "Cron"),
+    Column("target.ref_name", "Ref"),
+    Column("target.selector.pattern", "Pipeline"),
+    Column("updated_on", "Updated"),
+)
+
+SCHEDULE_EXECUTIONS: Final = (
+    Column("type", "Type"),
+    Column("pipeline.build_number", "Build"),
+    Column("pipeline.uuid", "Pipeline"),
+    Column("error.message", "Error"),
+)
+
+KNOWN_HOSTS: Final = (
+    Column("uuid", "UUID"),
+    Column("hostname", "Host"),
+    Column("public_key.key_type", "Key type"),
+    Column("public_key.sha256_fingerprint", "SHA-256"),
+)
+
+CACHES: Final = (
+    Column("uuid", "UUID"),
+    Column("name", "Name"),
+    Column("path", "Path"),
+    Column("file_size_bytes", "Bytes"),
+    Column("created_on", "Created"),
+)
+
+CACHE_URI: Final = (Column("uri", "URI"),)
+
+RUNNERS: Final = (
+    Column("uuid", "UUID"),
+    Column("name", "Name"),
+    Column("labels", "Labels"),
+    Column("state.status", "Status"),
+    Column("state.version.version", "Version"),
+    Column("created_on", "Created"),
+)
+
+SSH_KEY_PAIR: Final = (Column("public_key", "Public key"),)
+
+PIPELINES_CONFIG: Final = (Column("enabled", "Enabled"), Column("repository.full_name", "Repository"))
+
+BUILD_NUMBER: Final = (Column("next", "Next build"),)

@@ -209,7 +209,7 @@ set; run them with `uv run pytest -m live`.
 - [x] `0.3.0` Pull requests
 - [x] `0.4.0` Branches, tags, commits, source, statuses, reports, downloads
 - [x] `0.5.0` Branch restrictions, branching model, reviewers, permissions
-- [ ] `0.6.0` Pipelines
+- [x] `0.6.0` Pipelines
 - [ ] `0.7.0` Environments and deployments
 - [ ] `0.8.0` Keys, emails, search
 - [ ] `0.9.0` Snippets
