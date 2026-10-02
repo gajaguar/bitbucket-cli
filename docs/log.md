@@ -2,6 +2,8 @@
 
 ## 2026-10-02
 
+* **Change**: [`coverage.md`](coverage.md) marks the 0.7.0 rows `done`.
+
 * **Change**: [`coverage.md`](coverage.md) marks the 0.6.0 rows `done`.
 
 * **Change**: [`coverage.md`](coverage.md) marks the 0.5.0 rows `done`.

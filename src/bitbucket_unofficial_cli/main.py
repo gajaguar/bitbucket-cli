@@ -24,7 +24,9 @@ from bitbucket_unofficial_cli.commands import commit
 from bitbucket_unofficial_cli.commands import config
 from bitbucket_unofficial_cli.commands import default_reviewer
 from bitbucket_unofficial_cli.commands import deploy_key
+from bitbucket_unofficial_cli.commands import deployment
 from bitbucket_unofficial_cli.commands import download
+from bitbucket_unofficial_cli.commands import environment
 from bitbucket_unofficial_cli.commands import hook_event
 from bitbucket_unofficial_cli.commands import member
 from bitbucket_unofficial_cli.commands import permission
@@ -151,6 +153,8 @@ def create_app(services_factory: Callable[[], Services] = default_services) -> t
     cli.add_typer(deploy_key.APP, name="deploy-key")
     cli.add_typer(permission_config.APP, name="permission-config")
     cli.add_typer(pipeline.APP, name="pipeline")
+    cli.add_typer(environment.APP, name="environment")
+    cli.add_typer(deployment.APP, name="deployment")
     cli.add_typer(member.APP, name="member")
     cli.add_typer(permission.APP, name="permission")
     cli.add_typer(webhook.APP, name="webhook")
