@@ -406,3 +406,15 @@ SSH_KEY_PAIR: Final = (Column("public_key", "Public key"),)
 PIPELINES_CONFIG: Final = (Column("enabled", "Enabled"), Column("repository.full_name", "Repository"))
 
 BUILD_NUMBER: Final = (Column("next", "Next build"),)
+
+ENVIRONMENTS: Final = (Column("uuid", "UUID"), Column("name", "Name"))
+
+DEPLOYMENTS: Final = (
+    Column("uuid", "UUID"),
+    Column("environment.name", "Environment"),
+    Column("state.name", "State"),
+    Column("state.status.name", "Status"),
+    Column("release.name", "Release"),
+    Column("release.commit.hash", "Commit"),
+    Column("state.start_date", "Started"),
+)
