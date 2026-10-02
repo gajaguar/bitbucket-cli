@@ -63,16 +63,16 @@ Every capability of `bitbucket-unofficial-sdk` 1.0.1, grouped by SDK resource.
 
 ## Refs, commits and source
 
-| SDK                                                                      | CLI command                                       | Release | Status  |
-| ------------------------------------------------------------------------ | ------------------------------------------------- | ------- | ------- |
-| `repo.refs` list, `branches` and `tags` create, get, delete, list        | `bitbucket branch`, `tag`                         | 0.4.0   | planned |
-| `repo.commits` get, list, list_from, list_by_post, merge_base            | `bitbucket commit get`, `list`                    | 0.4.0   | planned |
-| `repo.commits` approve, unapprove, diff, patch, diffstat, file_conflicts | `bitbucket commit approve`, `diff`, ...           | 0.4.0   | planned |
-| `repo.commits.comments(commit)` CRUD, `properties(commit)`               | `bitbucket commit comment`, `property`            | 0.4.0   | planned |
-| `repo.source` create_commit, list, list_path, read, file_history         | `bitbucket source ls`, `cat`, `history`, `commit` | 0.4.0   | planned |
-| `repo.commit_statuses` list, create, get, update                         | `bitbucket commit status`                         | 0.4.0   | planned |
-| `repo.commits.reports(commit)` and `annotations`                         | `bitbucket report`, `annotation`                  | 0.4.0   | planned |
-| `repo.downloads` list, get, upload, delete                               | `bitbucket download`                              | 0.4.0   | planned |
+| SDK                                                                      | CLI command                                                                                            | Release | Status |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------- | ------ |
+| `repo.refs` list, `branches` and `tags` create, get, delete, list        | `bitbucket branch`, `tag`, `ref list`                                                                  | 0.4.0   | done   |
+| `repo.commits` get, list, list_from, list_by_post, merge_base            | `bitbucket commit get`, `list`                                                                         | 0.4.0   | done   |
+| `repo.commits` approve, unapprove, diff, patch, diffstat, file_conflicts | `bitbucket commit approve`, `diff`, ...                                                                | 0.4.0   | done   |
+| `repo.commits.comments(commit)` CRUD, `properties(commit)`               | `bitbucket commit comment`, `property`                                                                 | 0.4.0   | done   |
+| `repo.source` create_commit, list, list_path, read, file_history         | `bitbucket source ls`, `cat`, `history`, `commit`                                                      | 0.4.0   | done   |
+| `repo.commit_statuses` list, create, get, update                         | `bitbucket commit status`                                                                              | 0.4.0   | done   |
+| `repo.commits.reports(commit)` and `annotations`                         | `bitbucket report list`, `get`, `put`, `delete`; `annotation list`, `get`, `put`, `put-many`, `delete` | 0.4.0   | done   |
+| `repo.downloads` list, get, upload, delete                               | `bitbucket download`                                                                                   | 0.4.0   | done   |
 
 ## Repository settings
 

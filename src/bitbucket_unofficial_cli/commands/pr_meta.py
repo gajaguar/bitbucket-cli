@@ -8,13 +8,12 @@ import typer
 from bitbucket_unofficial_cli.output.columns import PULL_REQUEST_STATUSES
 from bitbucket_unofficial_cli.output.renderer import many
 from bitbucket_unofficial_cli.runtime.context import get_app_context
-from bitbucket_unofficial_cli.runtime.errors import CliError
 from bitbucket_unofficial_cli.runtime.errors import handle_errors
-from bitbucket_unofficial_cli.runtime.exit_codes import ExitCode
 from bitbucket_unofficial_cli.runtime.params import PagingOptions
 from bitbucket_unofficial_cli.runtime.params import PullRequestId
 from bitbucket_unofficial_cli.runtime.params import Repo
 from bitbucket_unofficial_cli.runtime.params import options_from
+from bitbucket_unofficial_cli.services.jsonvalue import parse_value
 from bitbucket_unofficial_cli.services.listing import paged
 
 STATUS_APP: Final = typer.Typer(help="Build statuses reported on a pull request.", no_args_is_help=True)
@@ -62,12 +61,7 @@ class _SetOptions:
 @options_from(_SetOptions)
 def set_property(ctx: typer.Context, options: _SetOptions) -> None:
     app_context = get_app_context(ctx)
-    text = typer.get_text_stream("stdin").read() if options.value == "-" else options.value
-    try:
-        parsed = json.loads(text)
-    except ValueError as error:
-        message = f"The value is not valid JSON: {error}"
-        raise CliError(message, exit_code=ExitCode.USAGE) from error
+    parsed = parse_value(options.value)
     app_context.repository(options.repo).pull_requests.properties(options.pr_id).put(
         options.app_key, options.name, parsed
     )

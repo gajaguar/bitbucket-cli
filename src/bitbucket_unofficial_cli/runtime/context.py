@@ -117,6 +117,12 @@ class AppContext:
         if text and not text.endswith("\n"):
             sys.stdout.write("\n")
 
+    @staticmethod
+    def write_bytes(data: bytes) -> None:
+        sys.stdout.flush()
+        sys.stdout.buffer.write(data)
+        sys.stdout.buffer.flush()
+
     # Destructive commands need --yes unless a person answers the prompt; a script without it fails
     # instead of hanging on stdin.
     @staticmethod

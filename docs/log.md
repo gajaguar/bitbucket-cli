@@ -2,6 +2,8 @@
 
 ## 2026-10-02
 
+* **Change**: [`coverage.md`](coverage.md) marks the 0.4.0 rows `done`.
+
 * **Change**: [`coverage.md`](coverage.md) marks the 0.3.0 rows `done`.
 
 * **Addition**: [`architecture/command-conventions.md`](architecture/command-conventions.md)

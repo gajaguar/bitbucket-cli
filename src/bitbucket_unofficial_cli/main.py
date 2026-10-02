@@ -15,15 +15,22 @@ from bitbucket_unofficial_cli.auth.file_store import FileCredentialStore
 from bitbucket_unofficial_cli.auth.keyring_store import KeyringCredentialStore
 from bitbucket_unofficial_cli.auth.oauth import OAuthClient
 from bitbucket_unofficial_cli.auth.resolver import CredentialStores
+from bitbucket_unofficial_cli.commands import annotation
 from bitbucket_unofficial_cli.commands import auth
+from bitbucket_unofficial_cli.commands import branch
 from bitbucket_unofficial_cli.commands import commit
 from bitbucket_unofficial_cli.commands import config
+from bitbucket_unofficial_cli.commands import download
 from bitbucket_unofficial_cli.commands import hook_event
 from bitbucket_unofficial_cli.commands import member
 from bitbucket_unofficial_cli.commands import permission
 from bitbucket_unofficial_cli.commands import pr
 from bitbucket_unofficial_cli.commands import project
+from bitbucket_unofficial_cli.commands import ref
 from bitbucket_unofficial_cli.commands import repo
+from bitbucket_unofficial_cli.commands import report
+from bitbucket_unofficial_cli.commands import source
+from bitbucket_unofficial_cli.commands import tag
 from bitbucket_unofficial_cli.commands import user
 from bitbucket_unofficial_cli.commands import webhook
 from bitbucket_unofficial_cli.commands import workspace
@@ -125,6 +132,13 @@ def create_app(services_factory: Callable[[], Services] = default_services) -> t
     cli.add_typer(project.APP, name="project")
     cli.add_typer(pr.APP, name="pr")
     cli.add_typer(commit.APP, name="commit")
+    cli.add_typer(branch.APP, name="branch")
+    cli.add_typer(tag.APP, name="tag")
+    cli.add_typer(ref.APP, name="ref")
+    cli.add_typer(source.APP, name="source")
+    cli.add_typer(report.APP, name="report")
+    cli.add_typer(annotation.APP, name="annotation")
+    cli.add_typer(download.APP, name="download")
     cli.add_typer(member.APP, name="member")
     cli.add_typer(permission.APP, name="permission")
     cli.add_typer(webhook.APP, name="webhook")
