@@ -112,7 +112,7 @@ wheels = [
 
 [[package]]
 name = "bitbucket-unofficial-cli"
-version = "1.1.0"
+version = "1.1.1"
 source = { editable = "." }
 dependencies = [
     { name = "bitbucket-unofficial-sdk" },
@@ -141,7 +141,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "bitbucket-unofficial-sdk", specifier = ">=1.0.1,<2" },
+    { name = "bitbucket-unofficial-sdk", specifier = ">=1.0.2,<2" },
     { name = "httpx", specifier = ">=0.28" },
     { name = "keyring", specifier = ">=25.0" },
     { name = "platformdirs", specifier = ">=4.0" },
@@ -167,15 +167,15 @@ dev = [
 
 [[package]]
 name = "bitbucket-unofficial-sdk"
-version = "1.0.1"
+version = "1.0.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "httpx" },
     { name = "pydantic" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/64/77/da369fff5a7de1607cf07c2d8e93af32b4ebdfd187fb51e4b478e9072d92/bitbucket_unofficial_sdk-1.0.1.tar.gz", hash = "sha256:c51a6c1a5ee246d9c57c26b86a73a19260dff46e05c99705f235610339f15dea", size = 246511, upload-time = "2026-10-01T21:28:58.992Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/15/d0/cbbd0173bc1e7994ed30fe1a498b4da9386d9439a064a4b32ef20c2d0853/bitbucket_unofficial_sdk-1.0.2.tar.gz", hash = "sha256:37a622bd7935009a5d02f88bd7947fa574062de158586f44fe1623f9c2408827", size = 246767, upload-time = "2026-10-02T16:27:40.081Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1f/d2/141987aecc4fc906921528bc30e1048d0de0a73c9c8ac90b5839a9d57717/bitbucket_unofficial_sdk-1.0.1-py3-none-any.whl", hash = "sha256:175ea677cd3dd255eb6081e76c55b4eaf60fb437a6dbd9d1a9c215ecb0a9979e", size = 135441, upload-time = "2026-10-01T21:28:57.351Z" },
+    { url = "https://files.pythonhosted.org/packages/5c/36/65dae2e95e9ef0ec4be3157582d38d753f8316b8c8b2e86409ea31f7051f/bitbucket_unofficial_sdk-1.0.2-py3-none-any.whl", hash = "sha256:4fcbd0d5d5e709451fca7bdafb7eab7e3616f59a367c3b140e2e2003a5557732", size = 135445, upload-time = "2026-10-02T16:27:38.675Z" },
 ]
 
 [[package]]
