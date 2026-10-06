@@ -20,6 +20,7 @@ gitmoji
 gpgsign
 hatchling
 ifscale
+katex
 klass
 kwonlyargs
 markdownlint
