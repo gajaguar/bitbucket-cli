@@ -156,7 +156,7 @@ dev = [
     { name = "conventional-git", specifier = ">=1.1" },
     { name = "mypy", specifier = ">=2.3.1" },
     { name = "pylint", specifier = ">=4.0.9" },
-    { name = "pylint-gajaguar", specifier = ">=2.0.1" },
+    { name = "pylint-gajaguar", specifier = ">=2.0.2" },
     { name = "pyright", specifier = ">=1.1.414" },
     { name = "pytest", specifier = ">=9.1" },
     { name = "pytest-cov", specifier = ">=7.1" },
