@@ -832,14 +832,14 @@ wheels = [
 
 [[package]]
 name = "pylint-gajaguar"
-version = "2.0.2"
+version = "2.0.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pylint" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/1b/27/7824f69272623c79e5f778fd143caa8573f45db58bd68255272cab4a7013/pylint_gajaguar-2.0.2.tar.gz", hash = "sha256:dd5fcd53c14effa540c26261ffa0caeca07416633e2333d0cb501a55e902fe24", size = 94451, upload-time = "2026-10-06T14:40:49.898Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c8/80/b03ff7465a7bf73e9bb1c46efc92b128cd805fe87ae8c74987d19fcf790f/pylint_gajaguar-2.0.3.tar.gz", hash = "sha256:b8c63f5470ada2c477ab5d257f0e439c8a6c922bd256a97c591e49cae37a0066", size = 94392, upload-time = "2026-10-06T17:51:37.919Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/24/d6/068f0eb95ce8b45713b52d56ec73f226bae6856f877ccbb10e1479b28a95/pylint_gajaguar-2.0.2-py3-none-any.whl", hash = "sha256:a09274fc4e1b92092daedcaa43e97602bea041b27edc8e6b2c14369d9ebedb98", size = 20468, upload-time = "2026-10-06T14:40:48.781Z" },
+    { url = "https://files.pythonhosted.org/packages/af/88/f718415e212ed44e85355a9650fa0562dad5c6798237f5b5a416c6ea8427/pylint_gajaguar-2.0.3-py3-none-any.whl", hash = "sha256:8f563dde97e82b3b450f2571bdae631974bf5a1ef5e215863587342430100f8e", size = 20469, upload-time = "2026-10-06T17:51:36.719Z" },
 ]
 
 [[package]]
