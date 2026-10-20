@@ -167,15 +167,15 @@ dev = [
 
 [[package]]
 name = "bitbucket-unofficial-sdk"
-version = "1.0.2"
+version = "1.0.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "httpx" },
     { name = "pydantic" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/15/d0/cbbd0173bc1e7994ed30fe1a498b4da9386d9439a064a4b32ef20c2d0853/bitbucket_unofficial_sdk-1.0.2.tar.gz", hash = "sha256:37a622bd7935009a5d02f88bd7947fa574062de158586f44fe1623f9c2408827", size = 246767, upload-time = "2026-10-02T16:27:40.081Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/52/19/3bcb7f83820492d5a63f649a0315d271bb69f41d19c5c5d05011fc044512/bitbucket_unofficial_sdk-1.0.3.tar.gz", hash = "sha256:f3ef0357f1d364f5a75f73f1676385f2aa9886a43e950daf229933a32078c01e", size = 254817, upload-time = "2026-10-14T14:42:39.43Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5c/36/65dae2e95e9ef0ec4be3157582d38d753f8316b8c8b2e86409ea31f7051f/bitbucket_unofficial_sdk-1.0.2-py3-none-any.whl", hash = "sha256:4fcbd0d5d5e709451fca7bdafb7eab7e3616f59a367c3b140e2e2003a5557732", size = 135445, upload-time = "2026-10-02T16:27:38.675Z" },
+    { url = "https://files.pythonhosted.org/packages/f2/bb/c786d184966c50f903e6fdcf971fc63583ac4fd13dc35d76fcc4fe96e964/bitbucket_unofficial_sdk-1.0.3-py3-none-any.whl", hash = "sha256:d8925cedf65683f96ca139bd4529fe8dd2f7c648bf3cc895aac2a3b8d6361803", size = 135665, upload-time = "2026-10-14T14:42:38.06Z" },
 ]
 
 [[package]]
