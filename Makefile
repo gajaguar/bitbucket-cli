@@ -13,10 +13,8 @@ FILES ?=
 # docs/conventions/commits-check.md.
 BASE ?= origin/main
 CONVENTIONAL_GIT ?= uvx conventional-git@latest
-# Pinned, not @latest: a linter's verdict changes between versions. See
-# docs/toolchain/okflint.md and docs/documentation/retag-notes.md.
-OKFLINT ?= uvx okflint@0.4.1
-TYPESAFE ?= uvx --from typesafe-unofficial-cli@1.1.0 typesafe
+OKFLINT ?= uvx okflint@latest
+TYPESAFE ?= uvx --from typesafe-unofficial-cli@latest typesafe
 DOCS_RETAG := uv run --script tools/docs-retag.py
 BRANCH ?= $(or $(GITHUB_HEAD_REF),$(shell git branch --show-current))
 
