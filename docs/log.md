@@ -1,5 +1,12 @@
 # Directory Update Log
 
+## 2026-10-28
+
+* **Change**: the `Makefile` runs `okflint` and `typesafe` at `@latest`, as it
+  already ran `conventional-git`, and `toolchain/layering-rule.md` matches.
+* **Fix**: the `agents/` notes write `stale_after` as an ISO 8601 date-time with
+  offset, because okflint 0.5 rejects a bare date.
+
 ## 2026-10-02
 
 * **Change**: the first `make docs-retag` run re-assigned the tags of several
