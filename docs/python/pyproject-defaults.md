@@ -25,5 +25,5 @@ These are left out on purpose:
 | ruff `target-version`                          | inferred from `requires-python`                                                                                    |
 | ruff `lint.isort.section-order`                | equal to ruff's default order                                                                                      |
 | pyright `exclude` for `.venv` / `node_modules` | pyright excludes `**/.*` and `**/node_modules` by default                                                          |
-| pylint `missing-*-docstring` disables          | `disable = ["all"]` already covers them; only the plugin's `gajaguar-*` checkers run                               |
+| ferrolint's own ported pylint rules            | `disable = ["all"]` already covers them; only the plugin's `gajaguar-*` rules run                                  |
 | `[tool.uv]` interpreter settings               | set once in `mise.toml`'s `[env]` — see [Interpreter source](interpreter-source.md)                                |

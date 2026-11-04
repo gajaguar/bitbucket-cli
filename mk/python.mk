@@ -1,12 +1,12 @@
 UV := uv
-PYPI_DEPS := pylint-gajaguar conventional-git
+PYPI_DEPS := ferrolint pylint-gajaguar conventional-git
 
 # Use the project's own pinned, dev-dependency copy in make commits-check
 # (defined in the base Makefile) instead of an ephemeral uvx fetch.
 CONVENTIONAL_GIT := $(UV) run conventional-git
 
 LANG_INSTALL_TARGETS    += install-python
-LANG_CHECK_TARGETS      += lint format-check typecheck pylint conventional-git-latest
+LANG_CHECK_TARGETS      += lint format-check typecheck ferrolint conventional-git-latest
 LANG_FIX_TARGETS        += format lint-fix
 LANG_FIX_UNSAFE_TARGETS += format lint-fix-unsafe
 LANG_TEST_TARGETS       += pytest
@@ -31,8 +31,8 @@ pyright: ## Type-check with Pyright — accepts FILES="..." to limit scope
 
 typecheck: mypy pyright ## Run both type checkers
 
-pylint: ## Self-lint with this repo's own checkers (see github.com/gajaguar/pylint-gajaguar) — accepts FILES="..."
-	$(UV) run pylint $(or $(FILES),src tests)
+ferrolint: ## Self-lint with this repo's own rules (see github.com/gajaguar/pylint-gajaguar) — accepts FILES="..."
+	$(UV) run ferrolint $(or $(FILES),src tests)
 
 conventional-git-latest: ## Fail if the installed conventional-git is behind PyPI (skips when PyPI is unreachable)
 	@out=$$($(UV) pip list --outdated --format json 2>/dev/null) || { echo 'conventional-git-latest: PyPI unreachable, skipped'; exit 0; }; \
@@ -65,5 +65,5 @@ release-tag: ## Tag the base branch as v<project.version> and push the tag (mino
 	git rev-parse --quiet --verify "refs/tags/$$tag" >/dev/null && { echo "release-tag: $$tag already exists"; exit 1; }; \
 	git tag -a "$$tag" -m "$$tag" && git push origin "$$tag"
 
-.PHONY: install-python lint format-check mypy pyright typecheck pylint conventional-git-latest \
+.PHONY: install-python lint format-check mypy pyright typecheck ferrolint conventional-git-latest \
 	format lint-fix lint-fix-unsafe pytest coverage build release-tag

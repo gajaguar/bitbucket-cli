@@ -78,9 +78,9 @@ repos:
         types: [python]
         pass_filenames: false
 
-      - id: pylint
-        name: pylint (pylint-gajaguar)
-        entry: make pylint
+      - id: ferrolint
+        name: ferrolint (pylint-gajaguar)
+        entry: make ferrolint
         language: system
         types: [python]
         pass_filenames: false
