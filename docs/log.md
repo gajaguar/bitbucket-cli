@@ -1,5 +1,13 @@
 # Directory Update Log
 
+## 2026-11-04
+
+* **Change**: `pylint` is replaced by `ferrolint` and `pylint-gajaguar` moves
+  to 3.0, a ferrolint plugin that no longer loads in pylint, as in
+  project-template. `make pylint` becomes `make ferrolint`, and `enable` lists
+  the `gajaguar-*` symbols because ferrolint does not read the `gajaguar`
+  checker name.
+
 ## 2026-10-28
 
 * **Change**: the `Makefile` runs `okflint` and `typesafe` at `@latest`, as it

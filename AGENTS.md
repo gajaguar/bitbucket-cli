@@ -76,9 +76,11 @@ Once a pull request is open, the agent MUST:
 - Write no docstrings on functions, methods or classes; add a comment only
   where the *why* is not obvious from the code. `pylint-gajaguar`'s
   `gajaguar-no-docstrings` fails `make check` on any docstring.
-- Enable the plugin with `enable = ["gajaguar"]` in `pyproject.toml`'s
-  `[tool.pylint."messages control"]`, not with a list of rules, so a rule
-  added by a `pylint-gajaguar` upgrade runs without a config change.
+- Enable the plugin's rules by symbol in `pyproject.toml`'s
+  `[tool.pylint."messages control"]`, after `disable = ["all"]`: ferrolint
+  does not read the `gajaguar` checker name, and without `disable` its own
+  ported pylint rules run too. Add a rule that a `pylint-gajaguar` upgrade
+  ships to the list; ruff covers everything else.
 - Keep `pyproject.toml` to settings that differ from the tool's default, and
   keep a `lint.per-file-ignores` entry only while it matches a current
   violation; see
