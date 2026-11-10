@@ -2,7 +2,7 @@
 	"name": "bitbucket-cli-tools",
 	"private": true,
 	"devDependencies": {
-		"cspell": "^10.4.0",
+		"cspell": "^10.4.1",
 		"markdownlint-cli2": "^0.24.0"
 	}
 }
