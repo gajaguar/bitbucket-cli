@@ -1,5 +1,14 @@
 # Directory Update Log
 
+## 2026-11-17
+
+* **Change**: [`coverage.md`](coverage.md) adds the `1.2.0` pull-request row:
+  `--draft`/`--ready` on `bitbucket pr create` and `pr update`, and the SDK
+  `draft` field from `bitbucket-unofficial-sdk` 1.1.0.
+* **Change**: `pr list` and `pr get` now share the `Draft` column, so
+  `skills/bitbucket-pull-requests/SKILL.md` lists `--draft` and `--ready` for
+  both commands.
+
 ## 2026-11-04
 
 * **Change**: `pylint` is replaced by `ferrolint` and `pylint-gajaguar` moves

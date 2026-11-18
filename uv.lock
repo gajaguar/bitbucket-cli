@@ -132,7 +132,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "bitbucket-unofficial-sdk", specifier = ">=1.0.2,<2" },
+    { name = "bitbucket-unofficial-sdk", specifier = ">=1.1.0,<2" },
     { name = "httpx", specifier = ">=0.28" },
     { name = "keyring", specifier = ">=25.0" },
     { name = "platformdirs", specifier = ">=4.0" },
@@ -158,15 +158,15 @@ dev = [
 
 [[package]]
 name = "bitbucket-unofficial-sdk"
-version = "1.0.3"
+version = "1.1.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "httpx" },
     { name = "pydantic" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/52/19/3bcb7f83820492d5a63f649a0315d271bb69f41d19c5c5d05011fc044512/bitbucket_unofficial_sdk-1.0.3.tar.gz", hash = "sha256:f3ef0357f1d364f5a75f73f1676385f2aa9886a43e950daf229933a32078c01e", size = 254817, upload-time = "2026-10-14T14:42:39.43Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/77/b8/7cc71b5295dc56b167eefda957f1495c10243d1d5e688d4db8ff03db01d0/bitbucket_unofficial_sdk-1.1.0.tar.gz", hash = "sha256:cf4cdb4250fc0fcee141cbe65df790250c95316659bc4b14e1e3e7527040dd55", size = 255786, upload-time = "2026-11-18T00:41:32.491Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f2/bb/c786d184966c50f903e6fdcf971fc63583ac4fd13dc35d76fcc4fe96e964/bitbucket_unofficial_sdk-1.0.3-py3-none-any.whl", hash = "sha256:d8925cedf65683f96ca139bd4529fe8dd2f7c648bf3cc895aac2a3b8d6361803", size = 135665, upload-time = "2026-10-14T14:42:38.06Z" },
+    { url = "https://files.pythonhosted.org/packages/14/18/3b40511eefd0e44d288462fbbdd1f3ae051fef2d1611551392f19e9d1936/bitbucket_unofficial_sdk-1.1.0-py3-none-any.whl", hash = "sha256:20e65f6f960dcd1e1c00a13b0a9d50a66f21f05a1c0bc06ca6ff924e18a37f7e", size = 135669, upload-time = "2026-11-18T00:41:30.813Z" },
 ]
 
 [[package]]

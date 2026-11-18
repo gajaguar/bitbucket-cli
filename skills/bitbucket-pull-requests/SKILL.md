@@ -47,22 +47,22 @@ skill; for builds, the `bitbucket-pipelines` skill.
    user to run `bitbucket auth login` (interactive, hidden prompt) and stop.
 3. Choose the workflow:
 
-   | Goal               | Command                                                                                                                 |
-   | ------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-   | List pull requests | `bitbucket -o json pr list -r REPO [--state OPEN] [--query Q] [--sort -updated_on] [--limit N]`                         |
-   | By author          | `bitbucket -o json pr by-author USER_ID`                                                                                |
-   | Show one           | `bitbucket -o json pr get ID -r REPO`                                                                                   |
-   | Open one           | `bitbucket pr create -r REPO --title T --source BRANCH --destination BRANCH [--description D] [--reviewer UUID]`        |
-   | Edit one           | `bitbucket pr update ID -r REPO [--title] [--description] ...`                                                          |
-   | Read the change    | `pr files`, `pr commits`, `pr diff`, `pr patch`, `pr activity` (all `ID -r REPO`)                                       |
-   | Review             | `pr approve`, `pr unapprove`, `pr request-changes`, `pr unrequest-changes`                                              |
-   | Comment            | `pr comment create ID -r REPO -m TEXT [--inline-path F --inline-to N] [--parent CID]`                                   |
-   | Resolve a thread   | `pr comment resolve ID COMMENT -r REPO` (and `unresolve`; `list`, `get`, `update`, `delete`)                            |
-   | Tasks              | `pr task create ID -r REPO -m TEXT`, plus `list`, `get`, `update`, `delete`                                             |
-   | Build statuses     | `pr status list ID -r REPO`                                                                                             |
-   | Can it merge?      | `pr checks ID`, `pr conflicts ID` (both with `-r REPO`)                                                                 |
-   | Merge              | `bitbucket pr merge ID -r REPO [--strategy merge_commit/squash/fast_forward] [-m MSG] [--close-source-branch] [--wait]` |
-   | Decline            | `bitbucket pr decline ID -r REPO`                                                                                       |
+   | Goal               | Command                                                                                                                    |
+   | ------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+   | List pull requests | `bitbucket -o json pr list -r REPO [--state OPEN] [--query Q] [--sort -updated_on] [--limit N]`                            |
+   | By author          | `bitbucket -o json pr by-author USER_ID`                                                                                   |
+   | Show one           | `bitbucket -o json pr get ID -r REPO`                                                                                      |
+   | Open one           | `bitbucket pr create -r REPO --title T --source BRANCH --destination BRANCH [--description D] [--reviewer UUID] [--draft]` |
+   | Edit one           | `bitbucket pr update ID -r REPO [--title] [--description] [--draft/--ready] ...`                                           |
+   | Read the change    | `pr files`, `pr commits`, `pr diff`, `pr patch`, `pr activity` (all `ID -r REPO`)                                          |
+   | Review             | `pr approve`, `pr unapprove`, `pr request-changes`, `pr unrequest-changes`                                                 |
+   | Comment            | `pr comment create ID -r REPO -m TEXT [--inline-path F --inline-to N] [--parent CID]`                                      |
+   | Resolve a thread   | `pr comment resolve ID COMMENT -r REPO` (and `unresolve`; `list`, `get`, `update`, `delete`)                               |
+   | Tasks              | `pr task create ID -r REPO -m TEXT`, plus `list`, `get`, `update`, `delete`                                                |
+   | Build statuses     | `pr status list ID -r REPO`                                                                                                |
+   | Can it merge?      | `pr checks ID`, `pr conflicts ID` (both with `-r REPO`)                                                                    |
+   | Merge              | `bitbucket pr merge ID -r REPO [--strategy merge_commit/squash/fast_forward] [-m MSG] [--close-source-branch] [--wait]`    |
+   | Decline            | `bitbucket pr decline ID -r REPO`                                                                                          |
 
 4. To open a pull request from the current checkout, take the repository slug
    from the user (or `git remote get-url origin`), the source from `git branch
