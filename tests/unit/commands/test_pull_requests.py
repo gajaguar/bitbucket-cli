@@ -59,6 +59,35 @@ def test_pr_list_reads_one_page_from_a_cursor(cli: Typer, runner: CliRunner, env
 
 
 @respx.mock
+def test_pr_list_table_shows_the_draft_column(cli: Typer, runner: CliRunner, environ: dict[str, str]) -> None:
+    # Arrange
+    respx.get(PRS).mock(return_value=page([PR]))
+    # Act
+    result = run(cli, runner, environ, "pr", "list", *REPO, output="table")
+    # Assert
+    assert "Draft" in result.stdout
+
+
+@respx.mock
+def test_pr_create_as_draft_and_update_to_ready(cli: Typer, runner: CliRunner, environ: dict[str, str]) -> None:
+    # Arrange
+    created = respx.post(PRS).mock(return_value=httpx.Response(201, json=PR))
+    updated = respx.put(f"{PRS}/7").mock(return_value=httpx.Response(200, json=PR))
+    # Act
+    create = run(
+        cli,
+        runner,
+        environ,
+        *["pr", "create", *REPO, "--title", "Fix it", "--source", "feature", "--destination", "main", "--draft"],
+    )
+    update = run(cli, runner, environ, "pr", "update", "7", *REPO, "--ready")
+    # Assert
+    assert create.exit_code == update.exit_code == ExitCode.OK
+    assert body_of(created.calls.last.request)["draft"] is True
+    assert body_of(updated.calls.last.request) == {"draft": False}
+
+
+@respx.mock
 def test_pr_by_author(cli: Typer, runner: CliRunner, environ: dict[str, str]) -> None:
     # Arrange
     route = respx.get(f"{WORKSPACE}/pullrequests/557058:abc").mock(return_value=page([PR]))

@@ -52,14 +52,15 @@ Every row is `done` as of `1.0.0`. The notation is:
 
 ## Pull requests
 
-| SDK                                                                       | CLI command                                    | Release | Status |
-| ------------------------------------------------------------------------- | ---------------------------------------------- | ------- | ------ |
-| `repo.pull_requests` create, get, list, update                            | `bitbucket pr create`, `get`, `list`, `update` | 0.3.0   | done   |
-| `approve`, `unapprove`, `request_changes`, `unrequest_changes`, `decline` | `bitbucket pr approve`, `decline`, ...         | 0.3.0   | done   |
-| `merge`, `merge_task_status`, `merge_and_wait`, `mergeability_checks`     | `bitbucket pr merge`, `checks`                 | 0.3.0   | done   |
-| `diff`, `patch`, `diffstat`, `commits`, `conflicts`, `activity`           | `bitbucket pr diff`, `patch`, `files`, ...     | 0.3.0   | done   |
-| `comments(id)` CRUD, `resolve`, `unresolve`                               | `bitbucket pr comment`                         | 0.3.0   | done   |
-| `tasks(id)` CRUD, `statuses(id)`, `properties(id)`                        | `bitbucket pr task`, `status`, `property`      | 0.3.0   | done   |
+| SDK                                                                       | CLI command                                              | Release | Status |
+| ------------------------------------------------------------------------- | -------------------------------------------------------- | ------- | ------ |
+| `repo.pull_requests` create, get, list, update                            | `bitbucket pr create`, `get`, `list`, `update`           | 0.3.0   | done   |
+| `repo.pull_requests` create, update with `draft` (SDK 1.1.0)              | `bitbucket pr create`, `update` with `--draft`/`--ready` | 1.2.0   | done   |
+| `approve`, `unapprove`, `request_changes`, `unrequest_changes`, `decline` | `bitbucket pr approve`, `decline`, ...                   | 0.3.0   | done   |
+| `merge`, `merge_task_status`, `merge_and_wait`, `mergeability_checks`     | `bitbucket pr merge`, `checks`                           | 0.3.0   | done   |
+| `diff`, `patch`, `diffstat`, `commits`, `conflicts`, `activity`           | `bitbucket pr diff`, `patch`, `files`, ...               | 0.3.0   | done   |
+| `comments(id)` CRUD, `resolve`, `unresolve`                               | `bitbucket pr comment`                                   | 0.3.0   | done   |
+| `tasks(id)` CRUD, `statuses(id)`, `properties(id)`                        | `bitbucket pr task`, `status`, `property`                | 0.3.0   | done   |
 
 ## Refs, commits and source
 

@@ -113,6 +113,7 @@ PULL_REQUESTS: Final = (
     Column("id", "ID"),
     Column("title", "Title"),
     Column("state", "State"),
+    Column("draft", "Draft"),
     Column("author.display_name", "Author"),
     Column("source.branch.name", "Source"),
     Column("destination.branch.name", "Destination"),
@@ -122,7 +123,6 @@ PULL_REQUESTS: Final = (
 PULL_REQUEST: Final = (
     *PULL_REQUESTS,
     Column("description", "Description"),
-    Column("draft", "Draft"),
     Column("close_source_branch", "Closes source"),
     Column("comment_count", "Comments"),
     Column("task_count", "Tasks"),

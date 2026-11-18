@@ -61,6 +61,10 @@ _StateOption = Annotated[  # pylint: disable=gajaguar-module-const-naming,gajagu
     list[_State] | None,
     typer.Option("--state", help="Only pull requests in this state; repeatable."),
 ]
+_DraftOption = Annotated[  # pylint: disable=gajaguar-module-const-naming,gajaguar-require-final
+    bool | None,
+    typer.Option("--draft/--ready", help="Mark the pull request as a draft or ready for review."),
+]
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
@@ -87,6 +91,7 @@ class _CreateOptions:
         bool | None,
         typer.Option("--close-source-branch/--keep-source-branch", help="Close the source branch on merge."),
     ] = None
+    draft: _DraftOption = None
     from_file: FromFile = None
 
 
@@ -98,6 +103,7 @@ class _UpdateOptions:
     destination: Annotated[str | None, typer.Option("--destination", help="Destination branch.")] = None
     description: Annotated[str | None, typer.Option("--description", help="Pull request description.")] = None
     reviewers: Annotated[list[str] | None, typer.Option("--reviewer", help="Reviewer UUID; repeatable.")] = None
+    draft: _DraftOption = None
     from_file: FromFile = None
 
 
@@ -192,6 +198,7 @@ def create(ctx: typer.Context, options: _CreateOptions) -> None:
         description=options.description,
         reviewers=[{"uuid": uuid} for uuid in options.reviewers] if options.reviewers else None,
         close_source_branch=options.close_source_branch,
+        draft=options.draft,
     )
     created = app_context.repository(options.repo).pull_requests.create(payload)
     app_context.render(single(created, PULL_REQUEST, id_key="id"))
@@ -209,6 +216,7 @@ def update(ctx: typer.Context, options: _UpdateOptions) -> None:
         destination={"branch": {"name": options.destination}} if options.destination else None,
         description=options.description,
         reviewers=[{"uuid": uuid} for uuid in options.reviewers] if options.reviewers else None,
+        draft=options.draft,
     )
     updated = app_context.repository(options.repo).pull_requests.update(options.pr_id, payload)
     app_context.render(single(updated, PULL_REQUEST, id_key="id"))
