@@ -373,13 +373,13 @@ wheels = [
 
 [[package]]
 name = "ferrolint"
-version = "1.1.0"
+version = "1.3.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/08/05/c602d39cd37c5da9bc33d08680935bb8529f9b99e61a8f4811c986ce5878/ferrolint-1.1.0.tar.gz", hash = "sha256:c1e679e6a05d0600c10d232ba7e026d822b96e2128e38a09466940782ccc20b9", size = 615633, upload-time = "2026-11-03T14:29:24.351Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/34/a2/1bf303b1bc44e7edb9dcea0ed626d434e1ff2426cde93fb2cc043d4af46f/ferrolint-1.3.0.tar.gz", hash = "sha256:a97d6c89637c3dfd4c967556050504d184ac5f5d3dee63e5dc68946f1d628e0e", size = 623952, upload-time = "2026-11-20T23:46:33.944Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5e/02/3718451d071819a174898d7d45a29c467572078af1970b6a1453e28ef313/ferrolint-1.1.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:b2ad45730f743c02aebb6817e06a1e2ee385a5306068636ed184c89f50b640a8", size = 8876445, upload-time = "2026-11-03T14:29:17.914Z" },
-    { url = "https://files.pythonhosted.org/packages/70/7d/f5670ad7d35dc474eb24143d59f2115ce849f7e382daeb418e14c54aba82/ferrolint-1.1.0-py3-none-manylinux_2_17_aarch64.musllinux_1_2_aarch64.whl", hash = "sha256:a8b240fb5d11db198de0ac0d466e7c9b0a8e590a8af03b30c628f2c28f185777", size = 8502170, upload-time = "2026-11-03T14:29:20.173Z" },
-    { url = "https://files.pythonhosted.org/packages/f0/4d/2a7e08abab777a772f837c6bec97b76dd8fa5e8a65363d86b3cd8ce157f5/ferrolint-1.1.0-py3-none-manylinux_2_17_x86_64.musllinux_1_2_x86_64.whl", hash = "sha256:a8b15ed2bc0a39b0d1c71cd064ea10ea77b147171f8653f23ca0bd9a144c361c", size = 9931682, upload-time = "2026-11-03T14:29:22.389Z" },
+    { url = "https://files.pythonhosted.org/packages/49/0c/f0f52eedec1eeaf84fe97f6cf78818cecd2dea2f0fb6f3eb2742ec64163d/ferrolint-1.3.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:96bb342e3a31512499fc01907265a78798215824f38bc1dd5e8b9fc9b85df136", size = 8883991, upload-time = "2026-11-20T23:46:26.139Z" },
+    { url = "https://files.pythonhosted.org/packages/6b/74/357e3e1acc1a1f81f16bd89d8dfbeaf33c272124c7fac6dc4b04268ab81e/ferrolint-1.3.0-py3-none-manylinux_2_17_aarch64.musllinux_1_2_aarch64.whl", hash = "sha256:b39b4f0a7f46b0285fea675e94eb684ad54c48efd16317b8e2b1ee4e2cd7d009", size = 8505128, upload-time = "2026-11-20T23:46:28.901Z" },
+    { url = "https://files.pythonhosted.org/packages/d8/64/18e6a2d743ecf58914714dcebc548132f4aa17e7d31f3ba2834a7475dd49/ferrolint-1.3.0-py3-none-manylinux_2_17_x86_64.musllinux_1_2_x86_64.whl", hash = "sha256:1103ddd8dc7f1b01dbcd3d8d663a5cc52c012de1ee1697d1d089f98d14d1ccae", size = 9940898, upload-time = "2026-11-20T23:46:31.6Z" },
 ]
 
 [[package]]
